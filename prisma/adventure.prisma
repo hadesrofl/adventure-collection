@@ -1,0 +1,25 @@
+import { Tag } from "./tag"
+import { Series } from "series"
+import { Genre } from "genre"
+import { System } from "system"
+import { Language } from "language"
+
+model Adventure {
+    id            Int      @id @default(autoincrement())
+    createdAt     DateTime @default(now())
+    updatedAt     DateTime @default(now())
+    system        System   @relation(fields: [systemId], references: [id], onUpdate: Cascade)
+    systemId      Int
+    name          String
+    summary       String
+    language      Language @default(English)
+    image         String?
+    pageCount     Int?
+    alreadyPlayed Boolean  @default(false)
+    minLevel      Int?
+    maxLevel      Int?
+    genres        Genre[]
+    tags          Tag[]
+    seriesId      Int?
+    series        Series?  @relation("linkedAdventures", fields: [seriesId], references: [id])
+}

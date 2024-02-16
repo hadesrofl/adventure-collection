@@ -1,0 +1,17 @@
+{
+  "AdventureCards": {
+    "pageCount": "Seitenzahl",
+    "levelRange": "Stufen"
+  },
+  "Errors": {
+    "pages": {
+      "generic": {
+        "text": "Etwas ist schiefgelaufen",
+        "buttons": {
+          "tryAgain": "Versuche es erneut",
+          "backToHome": "Zurück zur Startseite"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+[
+  {
+    "name": "Science Fiction",
+    "children": [
+      {
+        "name": "Cyberpunk",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "Fantasy",
+    "children": [
+      {
+        "name": "Sword & Sorcery",
+        "children": []
+      },
+      {
+        "name": "High Fantasy",
+        "children": []
+      },
+      {
+        "name": "Low Fantasy",
+        "children": []
+      },
+      {
+        "name": "Urban Fantasy",
+        "children": []
+      },
+      {
+        "name": "Weird Fantasy",
+        "children": []
+      },
+      {
+        "name": "Dark Fantasy",
+        "children": [
+          {
+            "name": "Grim Dark",
+            "children": []
+          },
+          {
+            "name": "Dark Fairytale",
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+]

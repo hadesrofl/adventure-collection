@@ -1,0 +1,17 @@
+{
+  "AdventureCards": {
+    "pageCount": "Page Count",
+    "levelRange": "Levels"
+  },
+  "Errors": {
+    "pages": {
+      "generic": {
+        "text": "Something went wrong",
+        "buttons": {
+          "tryAgain": "Try again",
+          "backToHome": "Back to Start"
+        }
+      }
+    }
+  }
+}

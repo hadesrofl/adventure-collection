@@ -1,0 +1,10 @@
+import { Adventure } from "./adventure"
+
+model Tag {
+    id         Int         @id @default(autoincrement())
+    createdAt  DateTime    @default(now())
+    name       String      @unique
+    adventures Adventure[]
+}
+
+
