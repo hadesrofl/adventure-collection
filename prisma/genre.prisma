@@ -1,0 +1,11 @@
+import { Adventure } from "../schema"
+
+model Genre {
+    id         Int         @id @default(autoincrement())
+    name       String      @unique
+    createdAt  DateTime    @default(now())
+    parent     Genre?      @relation("parentGenre", fields: [parentId], references: [id])
+    parentId   Int?
+    children   Genre[]     @relation("parentGenre")
+    adventures Adventure[]
+}

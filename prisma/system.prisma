@@ -1,0 +1,8 @@
+import { Adventure } from "adventure"
+
+model System {
+    id         Int         @id @default(autoincrement())
+    name       String
+    createdAt  DateTime    @default(now())
+    adventures Adventure[]
+}

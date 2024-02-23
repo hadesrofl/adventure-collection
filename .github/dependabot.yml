@@ -1,0 +1,45 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    commit-message:
+      prefix: "deps: "
+    schedule:
+      interval: weekly
+    groups:
+      mui:
+        patterns:
+          - "@mui*"
+        update-types:
+          - "patch"
+      react:
+        patterns:
+          - "react*"
+          - "@types/react*"
+        update-types:
+          - "minor"
+          - "patch"
+      eslint:
+        patterns:
+          - "eslint*"
+        update-types:
+          - "patch"
+      emotion:
+        patterns:
+          - "@emotion*"
+        update-types:
+          - "patch"
+      prisma:
+        patterns:
+          - "@prisma*"
+          - "prisma*"
+        update-types:
+          - "patch"
+      tests:
+        patterns:
+          - "jest*"
+          - "@types/jest*"
+          - "@testing*"
+          - "node-mocks-http"
+        update-types:
+          - "patch"
