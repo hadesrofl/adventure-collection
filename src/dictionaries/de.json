@@ -1,7 +1,28 @@
 {
   "AdventureCards": {
-    "pageCount": "Seitenzahl",
-    "levelRange": "Stufen"
+    "cardFront": {
+      "pageCount": "Seitenzahl",
+      "levelRange": "Stufen"
+    },
+    "carousel": {
+      "noCardsFound": "Karte nicht gefunden :("
+    },
+    "deleteDialog": {
+      "title": "Abenteuer löschen",
+      "contextText": "Bist du sicher, dass du das folgende Abenteuer löschen möchtest?\n\nAbenteuer:",
+      "buttons": {
+        "cancelLabel": "Abbrechen",
+        "okLabel": "Löschen"
+      }
+    },
+    "noAdventureDialog": {
+      "title": "Ein neues Abenteuer anlegen?",
+      "contextText": "Es scheint, dass keine Abenteuer existieren. Möchtest du ein neues anlegen?",
+      "buttons": {
+        "no": "Nein",
+        "yes": "Abenteuer anlegen"
+      }
+    }
   },
   "Errors": {
     "pages": {

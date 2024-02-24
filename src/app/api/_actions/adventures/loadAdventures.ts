@@ -8,3 +8,7 @@ export async function loadAdventures(
 ) {
   return dbContext.adventures.list(where, skip, limit);
 }
+
+export async function loadAdventure(id: number) {
+  return dbContext.adventures.getById(id);
+}

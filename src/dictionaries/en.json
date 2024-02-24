@@ -1,7 +1,28 @@
 {
   "AdventureCards": {
-    "pageCount": "Page Count",
-    "levelRange": "Levels"
+    "cardFront": {
+      "pageCount": "Page Count",
+      "levelRange": "Levels"
+    },
+    "carousel": {
+      "noCardsFound": "No card found :("
+    },
+    "deleteDialog": {
+      "title": "Delete Adventure",
+      "contextText": "Are you sure you want to delete the adventure?\n\nAdventure:",
+      "buttons": {
+        "cancelLabel": "Cancel",
+        "okLabel": "Delete"
+      }
+    },
+    "noAdventureDialog": {
+      "title": "Want to add a new Adventure?",
+      "contextText": "It seems there are no adventures yet. Want to add a new one?",
+      "buttons": {
+        "no": "No",
+        "yes": "Add Adventure"
+      }
+    }
   },
   "Errors": {
     "pages": {
