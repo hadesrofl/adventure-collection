@@ -4,6 +4,7 @@ export const mockUseRouter = {
   push: jest.fn(),
   prefetch: jest.fn(),
   refresh: jest.fn(),
+  replace: jest.fn(),
 };
 export const mockUsePathname = jest.fn();
 export const mockUseSearchParams = {

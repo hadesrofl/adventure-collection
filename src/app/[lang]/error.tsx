@@ -1,11 +1,11 @@
 "use client";
 import CenteredBox from "@components/lib/CenteredBox";
 import { Button, Stack, Typography } from "@mui/material";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { DictionaryContext } from "@dictionaries/helpers/dictionaryContext";
 
-export default function Error({
+export default function ErrorPage({
   error,
 }: {
   error: Error & { digest?: string };
