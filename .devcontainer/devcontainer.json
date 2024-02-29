@@ -28,7 +28,8 @@
 				"mtxr.sqltools",
 				"mtxr.sqltools-driver-pg",
 				"fabiospampinato.vscode-todo-plus",
-				"ajmnz.prisma-import"
+				"ajmnz.prisma-import",
+				"ryanluker.vscode-coverage-gutters"
 			],
 			"settings": {
 			    "sqltools.connections": [
