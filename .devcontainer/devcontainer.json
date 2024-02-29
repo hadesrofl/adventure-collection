@@ -16,7 +16,7 @@
 		5432
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install && npm run db:schema:build && npm run db:migrate:dev",
+	"postCreateCommand": "npm install && npm run db:schema:build && npm run db:migrate:dev && npm run db:client:generate",
 	"customizations": {
 		"vscode": {
 			"extensions": [

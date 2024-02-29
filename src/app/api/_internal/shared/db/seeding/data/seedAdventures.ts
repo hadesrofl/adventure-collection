@@ -50,7 +50,7 @@ function createAdventure(
     summary,
     genres,
     tags,
-    seriesId: null,
+    seriesId: series !== null ? series.id : null,
     series,
   };
 }
@@ -78,7 +78,22 @@ function findGenre(name: string, genres: Genre[]) {
   return genre;
 }
 
-function getAdventureData(systems: System[], genres: Genre[]): AdventureFull[] {
+function findSeries(name: string, series: Series[]) {
+  const adventureSeries = series.find(
+    (series) => series.name.toLowerCase() === name.toLowerCase()
+  );
+  if (adventureSeries === undefined)
+    throw new Error(
+      `Series '${name}' not found in database. Run seeding of series first!`
+    );
+  return adventureSeries;
+}
+
+function getAdventureData(
+  systems: System[],
+  genres: Genre[],
+  series: Series[]
+): AdventureFull[] {
   const adventureData = readJsonFile<AdventureSeedData[]>(
     `${process.env.SEED_DATA_DIR}/adventures.json`
   );
@@ -89,6 +104,10 @@ function getAdventureData(systems: System[], genres: Genre[]): AdventureFull[] {
     const adventureGenres = adventure.genres.map((genreName) =>
       findGenre(genreName, genres)
     );
+    const adventureSeries =
+      adventure.series !== undefined
+        ? findSeries(adventure.series, series)
+        : undefined;
     return createAdventure(
       adventure.name,
       adventure.summary,
@@ -103,9 +122,7 @@ function getAdventureData(systems: System[], genres: Genre[]): AdventureFull[] {
       adventure.pageCount,
       adventure.minLevel,
       adventure.maxLevel,
-      adventure.series
-        ? { id: 0, name: adventure.series, createdAt: new Date() }
-        : null
+      adventureSeries
     );
   });
 }
@@ -113,10 +130,11 @@ function getAdventureData(systems: System[], genres: Genre[]): AdventureFull[] {
 export async function seedAdventures(
   seedRepository: Repository<AdventureFull>,
   systems: System[],
-  genres: Genre[]
+  genres: Genre[],
+  series: Series[]
 ) {
   console.log("Seeding Adventures...");
-  const seedData = getAdventureData(systems, genres);
+  const seedData = getAdventureData(systems, genres, series);
   let dataCount = 0;
   for (let i = 0; i < seedData.length; i += 1) {
     const adventure = seedData[i];
