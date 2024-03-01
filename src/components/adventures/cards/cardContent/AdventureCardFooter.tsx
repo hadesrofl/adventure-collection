@@ -6,6 +6,7 @@ import { DialogButtonProps } from "@components/lib/dialogs/ActionDialog";
 import { DictionaryContext } from "@dictionaries/helpers/dictionaryContext";
 import { useContext } from "react";
 import { AdventureCardCommonProps } from "./AdventureCardCommonProps";
+import { deleteAdventureById } from "@app/api/_actions/adventures/deleteAdventures";
 
 export default function AdventureCardFooter({
   adventure,
@@ -26,7 +27,7 @@ export default function AdventureCardFooter({
   const deleteAdventure = async () => {
     if ("id" in adventure) {
       try {
-        // TODO: Add here call to delete adventure
+        await deleteAdventureById(adventure.id);
         router.refresh();
       } catch (error) {
         console.log(error);
