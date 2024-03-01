@@ -7,10 +7,22 @@ import {
   createLevelRangeLabel,
 } from "./cardContent/AdventureCardContent";
 import { BasePage } from "@tests/pages/BasePage";
+import userEvent, { UserEvent } from "@testing-library/user-event";
+import { DeleteDialogButtonPage } from "@components/lib/buttons/DeleteDialogButton.page";
 
 export class AdventureCardPageObject extends BasePage<AdventureCardContentProps> {
+  private user: UserEvent;
+  dialog: DeleteDialogButtonPage;
+
   constructor(props: AdventureCardContentProps) {
     super(props);
+    this.user = userEvent.setup();
+    this.dialog = new DeleteDialogButtonPage(
+      "Delete Adventure",
+      "Are you sure you want to delete the adventure?\n\nAdventure:",
+      "Cancel",
+      "Delete"
+    );
   }
 
   render() {
@@ -40,7 +52,7 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
     return null;
   }
 
-  get titel() {
+  get title() {
     return this.getCardOnPage();
   }
 
@@ -127,11 +139,21 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
     return within(card).queryByTestId("EditIcon");
   }
 
+  async clickButton(button: "delete" | "edit") {
+    const buttonToClick =
+      button === "delete" ? this.deleteButton : this.editButton;
+
+    if (buttonToClick === null)
+      throw new Error(`Can't click on ${button} button`);
+
+    this.user.click(buttonToClick);
+  }
+
   async assertToBeInTheDocument() {
     if (this.props.adventure.image !== null)
       expect(this.image).toBeInTheDocument();
 
-    expect(this.titel).toBeInTheDocument();
+    expect(this.title).toBeInTheDocument();
     expect(this.system).toBeInTheDocument();
 
     const tags = this.tags;

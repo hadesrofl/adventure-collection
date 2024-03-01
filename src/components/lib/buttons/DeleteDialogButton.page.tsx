@@ -15,6 +15,14 @@ export class DeleteDialogButtonPage extends DialogButtonBasePage {
   }
 
   async delete() {
-    await this.user.click(await this.okButton());
+    const deleteButton = this.okButton;
+    if (deleteButton === null) throw new Error("Delete button not found");
+    await this.user.click(deleteButton);
+  }
+
+  async cancel() {
+    const cancelButton = this.cancelButton;
+    if (cancelButton === null) throw new Error("Cancel button not found");
+    await this.user.click(cancelButton);
   }
 }

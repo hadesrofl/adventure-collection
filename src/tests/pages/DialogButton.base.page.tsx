@@ -18,19 +18,19 @@ export class DialogButtonBasePage {
     this.okButtonLabel = okButtonLabel;
   }
 
-  async dialog() {
-    return await screen.findByText(this.title);
+  get dialogTitle() {
+    return screen.queryByText(this.title);
   }
 
-  async contentText() {
-    return await screen.findByText(this.text);
+  get contentText() {
+    return screen.queryByText(this.text);
   }
 
-  async cancelButton() {
-    return await screen.findByText(this.cancelButtonLabel);
+  get cancelButton() {
+    return screen.queryByText(this.cancelButtonLabel);
   }
 
-  async okButton() {
-    return await screen.findByText(this.okButtonLabel);
+  get okButton() {
+    return screen.queryByText(this.okButtonLabel);
   }
 }

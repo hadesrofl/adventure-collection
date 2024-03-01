@@ -19,6 +19,6 @@ export class InputDialogButtonPage extends DialogButtonBasePage {
     const inputField = await screen.findByDisplayValue(oldName);
     await this.user.clear(inputField);
     await this.user.type(inputField, newName);
-    await this.user.click(await this.okButton());
+    if (this.okButton !== null) await this.user.click(this.okButton);
   }
 }
