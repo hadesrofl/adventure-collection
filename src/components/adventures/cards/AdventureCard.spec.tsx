@@ -4,6 +4,7 @@ import AppRoutes from "@app/appRoutes";
 import { prismaMock } from "@tests/setup/prisma";
 import { waitFor } from "@testing-library/react";
 import { adventureIncludes } from "@domain/models/adventure";
+import { mockUseRouter } from "@tests/setup/nextNavigation";
 
 async function openDeleteDialog(page: AdventureCardPageObject) {
   expect(page.deleteButton).toBeInTheDocument();
@@ -45,6 +46,12 @@ describe("Adventure Card", () => {
     expect(prismaMock.adventure.delete).toHaveBeenCalledWith({
       where: { id: adventure.id },
       include: adventureIncludes,
+    });
+    await waitFor(() => {
+      expect(mockUseRouter.push).toHaveBeenCalledWith(
+        AppRoutes.adventureRoutes.collection
+      );
+      expect(mockUseRouter.refresh).toHaveBeenCalledTimes(1);
     });
   });
 

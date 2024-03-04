@@ -72,7 +72,7 @@ export const mockGenres: Genre[] = [
   },
   {
     id: 6,
-    name: "Grimd Dark",
+    name: "Grim Dark",
     createdAt: new Date(),
     parentId: 4,
   },

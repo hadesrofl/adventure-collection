@@ -6,6 +6,7 @@ const adventureRoutes = {
   collection: appRoot,
   show: adventureShowRoute,
   create: `${adventureRoot}/create`,
+  edit: (id: number) => `${adventureRoot}/edit/${id}`,
 };
 
 const AppRoutes = { appRoot, adventureRoutes };

@@ -15,6 +15,10 @@ import { Genre } from "@domain/models/genre";
 
 jest.mock("next/cache");
 
+function removeRelationsFromAdventure(adventure: AdventureFull) {
+  return [adventure].map(({ id, system, series, ...rest }) => rest)[0];
+}
+
 describe("/adventures routes", () => {
   const defaultAdventure = mockAdventures[0];
   describe("Get adventures", () => {
@@ -78,7 +82,7 @@ describe("/adventures routes", () => {
         "I can't remember",
         0,
         { id: 0, name: "", createdAt: new Date(Date.now()) },
-        [],
+        defaultAdventure.genres,
         defaultAdventure.tags,
         "English"
       );
@@ -105,7 +109,7 @@ describe("/adventures routes", () => {
       expect(prismaMock.adventure.update).toHaveBeenCalledWith({
         where: { id: adventure.id },
         data: {
-          ...adventure,
+          ...removeRelationsFromAdventure(adventure),
           tags: {
             connectOrCreate: adventure.tags.map((tag) => {
               return {
@@ -118,15 +122,12 @@ describe("/adventures routes", () => {
           genres: {
             connectOrCreate: adventure.genres.map((genre) => {
               return {
-                where: { name: genre.name },
+                where: { id: genre.id },
                 create: { name: genre.name },
               };
             }),
             disconnect: genresToDelete,
           },
-          series: undefined,
-          seriesId: undefined,
-          system: undefined,
         },
         include: adventureIncludes,
       });
@@ -141,7 +142,7 @@ describe("/adventures routes", () => {
         "I can't remember",
         0,
         { id: 0, name: "", createdAt: new Date(Date.now()) },
-        [],
+        defaultAdventure.genres,
         defaultAdventure.tags.filter((tag) => tag !== removedTag),
         "English"
       );
@@ -168,7 +169,7 @@ describe("/adventures routes", () => {
       expect(prismaMock.adventure.update).toHaveBeenCalledWith({
         where: { id: adventure.id },
         data: {
-          ...adventure,
+          ...removeRelationsFromAdventure(adventure),
           tags: {
             connectOrCreate: adventure.tags
               .filter((tag) => tag !== removedTag)
@@ -183,15 +184,12 @@ describe("/adventures routes", () => {
           genres: {
             connectOrCreate: adventure.genres.map((genre) => {
               return {
-                where: { name: genre.name },
+                where: { id: genre.id },
                 create: { name: genre.name },
               };
             }),
             disconnect: genresToDelete,
           },
-          series: undefined,
-          seriesId: undefined,
-          system: undefined,
         },
         include: adventureIncludes,
       });
@@ -205,7 +203,7 @@ describe("/adventures routes", () => {
         "I can't remember",
         0,
         { id: 0, name: "", createdAt: new Date(Date.now()) },
-        [],
+        defaultAdventure.genres,
         defaultAdventure.tags.slice(1, defaultAdventure.tags.length - 1),
         "English"
       );
@@ -230,7 +228,7 @@ describe("/adventures routes", () => {
       expect(prismaMock.adventure.update).toHaveBeenCalledWith({
         where: { id: adventure.id },
         data: {
-          ...adventure,
+          ...removeRelationsFromAdventure(adventure),
           tags: {
             connectOrCreate: adventure.tags.map((tag) => {
               return {
@@ -243,15 +241,12 @@ describe("/adventures routes", () => {
           genres: {
             connectOrCreate: adventure.genres.map((genre) => {
               return {
-                where: { name: genre.name },
+                where: { id: genre.id },
                 create: { name: genre.name },
               };
             }),
             disconnect: genresToDelete,
           },
-          series: undefined,
-          seriesId: undefined,
-          system: undefined,
         },
         include: adventureIncludes,
       });
@@ -265,7 +260,7 @@ describe("/adventures routes", () => {
         "Error while editing an adventure"
       );
       const tagsToDelete: Tag[] = defaultAdventure.tags;
-      const genresToDelete: Genre[] = [];
+      const genresToDelete: Genre[] = defaultAdventure.genres;
       const adventure: AdventureFull = buildAdventure(
         "What hurts?",
         "I can't remember",
@@ -288,10 +283,9 @@ describe("/adventures routes", () => {
       expect(prismaMock.adventure.update).toHaveBeenCalledWith({
         where: { id: adventure.id },
         data: {
-          ...adventure,
-          series: undefined,
-          seriesId: undefined,
-          system: undefined,
+          ...removeRelationsFromAdventure(adventure),
+          seriesId: null,
+          systemId: 0,
           tags: {
             connectOrCreate: adventure.tags.map((tag) => {
               return { where: { name: tag.name }, create: { name: tag.name } };
@@ -301,7 +295,7 @@ describe("/adventures routes", () => {
           genres: {
             connectOrCreate: adventure.genres.map((genre) => {
               return {
-                where: { name: genre.name },
+                where: { id: genre.id },
                 create: { name: genre.name },
               };
             }),

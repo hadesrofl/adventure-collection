@@ -22,6 +22,7 @@
       "@public/*": ["./public/*"],
       "@app/*": ["./src/app/*"],
       "@components/*": ["./src/components/*"],
+      "@contexts/*": ["./src/contexts/*"],
       "@domain/*": ["./src/domain/*"],
       "@dictionaries/*": ["./src/dictionaries/*"],
       "@tests/*": ["./src/tests/*"]
