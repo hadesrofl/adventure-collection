@@ -12,6 +12,238 @@
     "maxLevel": 1
   },
   {
+    "name": "Der Fluch der Barbarenkönige",
+    "summary": "Das Dorf Hirot, das von windgepeitschten Mooren und düsteren Wäldern umgeben ist, befindet sich derzeit in großer Not. Jede Nacht, wenn die Sonne hinter den Bergen im Westen versunken ist und von den angezündeten Kerzen nur noch kleine Stummel übrig sind, pirscht ein Höllenhund durch die Dorfstraßen und fällt in seiner Gier nach Blut über alle her, die dort leben. Vom Kriegsfürsten bis zum Bettler, von der Greisin bis zum Kind ist niemand vor ihm sicher.\nUm den unsterblichen Hund zu besiegen, reichen Klingen und Zaubersprüche alleine nicht aus. Wenn sie die Bestie erschlagen wollen, müssen die Abenteurer die Geheimnisse des Landes und der Barbarenkönige ergründen. Nur, wenn sie Artefakte in ihre Hände bekommen, die in einer blutrünstigen und längst vergangenen Zeit geschmiedet wurden, können die gerissensten und mutigsten unter ihnen es wagen, den Hund von Hirot herauszufordern!",
+    "tags": [
+      "Dorf",
+      "Magische Bestie",
+      "Dungeoncrawl",
+      "Grabmal",
+      "Ermittlung"
+    ],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/2019/12/DCC-Barbaren.jpg",
+    "language": "German",
+    "pageCount": 19,
+    "minLevel": 1
+  },
+  {
+    "name": "Mondsklaven des Kannibalenreichs",
+    "summary": "Im fernen Westen, jenseits der zivilisierten Länder, liegen die Tolomak-Inseln – bedeckt von todbringendem Dschungel, ruhelosen Vulkanen und versunkenen Ruinen. Die Legenden behaupten, sie seien die Heimat heimtückischer Hexen, grausamer Kannibalen, unbegreiflicher Monddämonen und noch schlimmerer Dinge! Weise sind jene, die einen großen Bogen um diese verfluchten Dschungel inseln machen, aber nicht jeder ist weise …\nDenn die Legenden besagen auch, dass unvorstellbare Macht und Schätze jenseits der Grenzen sterblicher Habgier zu finden sind. Schon segelt eine Gruppe unerschrockener Abenteurer im Licht der Dreifachmonde und kommt den Inseln immer näher. Mit etwas Glück werden sie mit einem Vermögen entkommen. Mit etwas Pech könnten sie sogar ihre Seelen verlieren.",
+    "tags": ["Hexcrawl", "Mond", "Kannibalen", "Insel"],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Weird Fantasy", "Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-15.png",
+    "language": "German",
+    "pageCount": 26,
+    "minLevel": 2
+  },
+  {
+    "name": "Der 13. Schädel",
+    "summary": "Vor 13 Generationen ging der erste Herzog von Magnussen einen fürchterlichen Pakt mit einer unbekannten Macht ein, die im Gegenzug nur eines verlangte: die 1. Tochter, die dem 13. Herzog von Magnussen geboren wurde. Nun, 13 Generationen später, wird die Tochter des Herzogs Magnussen XIII von einem maskierten Henker auf einer echsenhaften Bestie geraubt. Als diese mit ihren Schwingen über die Stadtmauer hinweg gleitet und jenseits der herzoglichen Bergfestung niedersinkt, weiß ein jeder Beobachter, dass sie in der Familienkrypta der Magnussens landet, wo die teuflischen Geheimnisse von 13 Generationen begraben und vergessen liegen – bis jetzt …\nDieses Abenteuermodul enthält außerdem Die Klinge des Gleichgewichts, ein kurzes Abenteuer für Stufe 2, in welchem der Patron eines Zauberkundigen einen simplen Auftrag erteilt: Reise in eine andere Dimension und erlange das legendäre Schwert der Neutralität! Aber sobald das Abenteuer seinen Lauf nimmt, muss der Zauberkundige feststellen, dass nicht alles so ist, wie es zu sein scheint!\nZusätzlich gibt es ausführliche Beschreibungen von 7 seltsamen Schädeln, die in euren Abenteuern für interessante Verwicklungen sorgen können.",
+    "tags": ["Dungeoncrawl", "Dungeon", "Teufel", "Untote", "Planarebenen"],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-13.png",
+    "language": "German",
+    "pageCount": 26,
+    "minLevel": 4
+  },
+  {
+    "name": "Der Betrachter aus der Tiefe",
+    "summary": "Das Siegerabenteuer des Mystery-Map-Abenteuerwettbewerbs 2012!\nDie Gerüchte sind wahr! Die Höhle der Geheimnisse enthält einen Schatzhort, der groß genug ist, um sieben Königreiche zu kaufen. Bergeweise Goldmünzen! Kostbare Edelsteine, so groß wie deine Faust! Schimmernde Schwerter und juwelenbesetzte Zauberstäbe, die allesamt so magisch sind, dass sie vor Macht knistern! Alles, was noch zwischen eurer lausigen Existenz und einem Leben in Saus und Braus steht, sind eine klitzekleine Ältere Gottheit, die dazu neigt, ganze Welten zu verschlingen, eine endlose Armee von abscheulichen Gezüchten, eine veritable Flutwelle aus fliegenden Augäpfeln mit unglaublichen Kräften, Riesensäurewürmer und ein Fluch, der die Kraft hat, euch die Augen aus dem Schädel zu reißen. Hast du den Mumm, eine Gottheit niederzustarren oder werden deine Augen für immer die Schatzkammer des Betrachters aus der Tiefe verzieren?",
+    "tags": [
+      "Dungeoncrawl",
+      "Dungeon",
+      "Fluch",
+      "Augen",
+      "Chaoswesen",
+      "Alter Gott",
+      "Patron"
+    ],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Weird Fantasy", "Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-Betrachter.png",
+    "language": "German",
+    "pageCount": 35,
+    "minLevel": 1
+  },
+  {
+    "name": "Der Turm der Schwarzen Perle",
+    "summary": "Alle zehn Jahre ziehen sich die Wellen des Himmlischen Ozeans weit genug zurück, um die höchsten Zinnen eines geheimnisvollen unterseeischen Turms freizugeben. Vor langer Zeit war dies eine schauerliche Festung von Sezrekan dem Älteren, dem niederträchtigsten Zauberkundigen, der je die bekannte Welt heimsuchte. Doch nun ist der Turm nur noch als letzte Ruhestätte der sagenhaften Schwarzen Perle bekannt – einem Artefakt, das all jene ins Verderben stürzt, die wagen, es ihr Eigen zu nennen.\nHeute Nacht erfüllt der Mond fast den Nachthimmel, und die Wellen haben bereits begonnen sich zurückzuziehen. Abenteurer haben 8 kurze Stunden Zeit, um den Turm zu erkunden, bevor die dunklen Wasser wieder zurückkehren. Die legendäre Schwarze Perle wartet auf ihre neuen Besitzer …wenn diese ihren Fluch überleben können.",
+    "tags": [
+      "Dungeoncrawl",
+      "Dungeon",
+      "Piraten",
+      "Gezeiten",
+      "Küste",
+      "Sezrekan"
+    ],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Weird Fantasy", "Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-23-1.png",
+    "language": "German",
+    "pageCount": 15,
+    "minLevel": 1
+  },
+  {
+    "name": "Schreckenslieder in der Finsternis",
+    "summary": "Der unterirdische Fluss rauscht in die Finsternis … Und genau dort, wo er in den Abgrund hinabstürzt, zerschellt euer Schiff an den Felsen. Gestrandet an lichtlosen, steinigen Gestaden müssen sich die SC nun mit Tiermenschen, seltsamen Gewächsen und dem Fürsorger selbst auseinander setzen, falls sie entkommen wollen. Denn in den Tiefen von Aereth schmieden die Verkünder der Verderbnis Komplotte gegen die Bewohner der Oberwelt. Die SC müssen diese Machenschaften aufdecken, wollen sie jemals wieder das Sonnenlicht erblicken.",
+    "tags": [
+      "Dungeoncrawl",
+      "Dungeon",
+      "Tiermenschen",
+      "Ruinenstadt",
+      "Fraktionen",
+      "Tempel"
+    ],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Weird Fantasy", "Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-2022-1.png",
+    "language": "German",
+    "pageCount": 21,
+    "minLevel": 1,
+    "series": "DCC Tag"
+  },
+  {
+    "name": "Der Königinnensohn aus Elfenland",
+    "summary": "Seltsame Angriffe plagen die Bewohner von Eng in der Nacht. Schatten und Blutvergießen halten die Dorfbewohner in ihren Häusern, sobald es dämmert. Sie brauchen mächtige Abenteurer, um die Bedrohungen aufzuspüren und zu stoppen. Dieses Abenteuer führt die Helden bis an die Grenzen von Elfenland und viel zu nah an den grausamen Dunklen Feenhof. Werden die Helden die Machenschaften der Königin von Elfenland verhindern oder werden sie Opfer des Zaubers und der List des bösartigen elfischen Hochadels?",
+    "tags": [
+      "Feen",
+      "Ermittlung",
+      "Tal",
+      "Dorf",
+      "Einhorn",
+      "Patron",
+      "Dungeoncrawl",
+      "Dungeon",
+      "Goblins",
+      "Firbolg",
+      "Trolle",
+      "Prinz",
+      "Fluch"
+    ],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-17-1.png",
+    "language": "German",
+    "pageCount": 22,
+    "minLevel": 1
+  },
+  {
+    "name": "Die Liebe in den Zeiten der Buttenleute",
+    "summary": "In diesem besonderen Abenteuer zum Valentinstag spielen die SC eine Gruppe Abenteurer, die sich dem Zorn einer verärgerten Gottheit stellen. Die Gottheit hat das Herz eines jungen Klerikers durch einen mechanischen Bären ersetzt. Um den Kleriker zu retten, müssen sich die SC Bonbonherz- rätseln, wilden Schnuffelhasen und anderen Hindernissen stellen, wenn sie die Hoffnung am Leben erhalten und wissen wollen, wie die Liebe in den Zeiten der Buttenleute schmeckt.\nUrsprünglich erdacht für die Spawn of Cyclops Con 2021 und aufgeführt mit den Gewinnern des Wettbewerbs „Love in the Age of Gongfarmers“ (dt. „Die Liebe in den Zeiten der Buttenleute“) als „The Lost Heart of Valentinus and the Funnel of Love“.\nValentinstagsabenteuer 2022. Ein Abenteuer für Stufe 2 von Stephen Newton.",
+    "tags": [
+      "Feierlichkeiten",
+      "Gottheiten",
+      "Magische Bestie",
+      "Kobolde",
+      "Religion",
+      "Liebe",
+      "Dorf",
+      "Dungeoncrawl",
+      "Dungeon"
+    ],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Weird Fantasy", "Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-25-1.png",
+    "language": "German",
+    "pageCount": 14,
+    "minLevel": 2,
+    "series": "Valentinsabenteuer"
+  },
+  {
+    "name": "Das 998. Konklave der Zauberer",
+    "summary": "Heil dir, Zauberer von Aerde! Vergiss alles, was du über Magie zu wissen glaubst. Die Meisterschaft über das Okkulte übersteigt das Verständnis der primitiven Gesellschaften und kriegführenden Reiche deiner Welt. Deine  Zaubertricks und Taschenspielereien sind ein Nichts im Angesicht wahrer Macht. Die Magier der Sternenkabale, einzigartige Meister der arkanen Künste, lassen dir eine seltene Einladung zukommen: Tritt ihnen bei. In einer wundersamen fliegenden Stadt rasen sie durch den Kosmos und werden von den weltraumfahrenden Völkern tausender Sonnen als Herren der Schöpfung verehrt. Steig auf zu den Sternen und nimm deinen rechtmäßigen Platz in ihren ruhmreichen Hallen der Macht ein – falls du dich traust!",
+    "tags": [
+      "Magier:innen",
+      "Weltraum",
+      "Stadt",
+      "Prüfungen",
+      "Vulkan",
+      "Aliens",
+      "Fraktionen",
+      "Zauberduelle",
+      "Dämonen",
+      "Ermittlung",
+      "Dschungel"
+    ],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Weird Fantasy", "Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-28.png",
+    "language": "German",
+    "pageCount": 47,
+    "minLevel": 6
+  },
+  {
+    "name": "Unter dem Messingbrunnen",
+    "summary": "Solange ihr zurückdenken könnt, war es für jeden im Dorf verboten die flammenumloderten Höhlen und rauchigen Kavernen zu betreten. Aber vor drei Tagen hat der Schwarze König mit seinen Räubern euer Dorf überrannt und eure Familien und Freunde als Geiseln genommen. Seine Forderungen sind so einfach wie unmöglich: Wagt euch in die brennende Kluft und kehrt mit dem Geheimnis des ewigen Lebens zurück.\nJetzt steht ihr vor dem Felsspalt und die Hitze schlägt euch entgegen. Ihr habt neben den einfachsten Werkzeugen nur den Mut der Verzweiflung dabei, um das zu schaffen, was eine Armee von hartgesottenen Schurken nicht gelang. Der Messingbrunnen wartet auf euch.\nDieses Abenteuer der Stufe 0 für einen einzigen Spielabend, reißt eure SC aus ihren bescheidenen Leben und schleudert sie hinaus in eine Welt grandioser Abenteuer. Viele von ihnen werden unter den seltsamen Geheimnissen, bizarren Feinden und vergessenen Zaubern ihre Leben lassen, denn nur für die gerissensten und schlausten unter den Abenteurern gibt es einen Ausweg Unter dem Messingbrunnen!",
+    "tags": [
+      "Dungeon",
+      "Dungeoncrawl",
+      "Räuber",
+      "Fallen",
+      "Rätsel",
+      "Ifrits",
+      "Phönix",
+      "Stadt",
+      "Berg"
+    ],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Weird Fantasy", "Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-2021.png",
+    "language": "German",
+    "pageCount": 16,
+    "minLevel": 0,
+    "series": "DCC Tag"
+  },
+  {
+    "name": "Die Flucht der Meerkönigin",
+    "summary": "Das Böse lauert unter dem Meer! Jahrelang hat es geschlafen, aber jetzt regt es sich wieder und droht, sich wie eine monströse Welle über die Oberflächenwelt zu wälzen. Nur eine Handvoll Verwegener steht zwischen den schändlichen Plänen aus der Tiefe und einer Welt, die droht in Leid zu versinken. Doch zuerst müssen sie das Refugium eines Zauberers, einen magischen Kerker und den ungewöhnlichsten Dungeon, dem sie je begegnet sind, meistern! Können sie die Flut rechtzeitig aufhalten oder werden sie für immer Opfer des Fluchs der Meerwandlung sein?",
+    "tags": [
+      "Wasserwesen",
+      "Fischmenschen",
+      "Hai",
+      "Unter Wasser",
+      "Schildkröte",
+      "Riesenkrabben",
+      "Fluch",
+      "Elementarechse",
+      "Fallen",
+      "Dungeon",
+      "Dungeoncrawl"
+    ],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Weird Fantasy", "Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-19-1.png",
+    "language": "German",
+    "pageCount": 29,
+    "minLevel": 3
+  },
+  {
+    "name": "Raub im Chronofugium",
+    "summary": "Das deutsche DCC-Turnierabenteuer 2021\nIn den Gassen und Spelunken Punjars erzählt man sich seit jeher eine Legende: Alle 99 Jahre taucht auf dem höchsten Gipfel der Nebelklippen ein Haus aus Bronze auf. Dies sei das Refugium eines Chronomanten, genannt Raban der Reisende, der den Fluss der Zeit entlang segelt wie normale Menschen auf den Meeren und Ozeanen. Die gerissensten Einbrecher und Diebe hätten sich an einem Raubzug durch sein Refugium versucht und nur sehr wenige seien zurückgekommen. Diese armen Seelen sahen um Jahr-zehnte gealtert aus oder nahmen die Züge von Jünglingen an. Sie kamen nur mit wenigen Schätzen zurück, denn sie traten angesichts der Gefahren, die sie erwarteten, schnell die Flucht an. Die Gerüchte über diese Gefahren sind – wie üblich in Punjar – im Laufe der Zeit in Vergessenheit geraten und den goldgierigen Nichtsnutzen, Aufschneidern und Halunken blieben nur die Sagen über Säcke voller Gold und melonengroße Juwelen im Kopf.\nAuch ihr seid solche Abenteurer, Langfinger und Glücksritter, die sich wenig Gedanken um Gefahren machen, sondern nur zwei Dinge im Sinn haben: Ruhm und Reichtum.",
+    "tags": [
+      "Turnierabenteuer",
+      "Zeitmagie",
+      "Zeit",
+      "Fallen",
+      "Rätsel",
+      "Dungeon",
+      "Dungeoncrawl",
+      "Golem",
+      "Drache"
+    ],
+    "system": "Dungeon Crawl Classics",
+    "genres": ["Weird Fantasy", "Sword & Sorcery"],
+    "image": "https://www.system-matters.de/wp-content/uploads/DCC-D1.png",
+    "language": "German",
+    "pageCount": 21,
+    "minLevel": 2,
+    "series": "Der Trichter"
+  },
+  {
     "name": "Das Winterfest der kleinen Heiligen",
     "summary": "Jedes Jahr im Winter begehen die Mäuse in Sterwig das Winterfest der kleinen Heiligen. Ganz gewöhnliche Mäuse werden für kleine Aufmerksamkeiten und selbstlose Hilfe gegenüber ihren Mitmäusen gefeiert. Doch dieses Jahr ist das Winterfest in Gefahr!\nDie Krähe Nachtblau findet keine Freunde. Sie hat Zaubertafeln einer Eulenzauberin gestohlen, um nicht mehr einsam zu sein. In Sterwig fand sie die Paraphernalia für ihr Ritual. Sie holte einen lebenden Traum in diese Welt und in ihren Geist.\nDer Traum will zurück in das Träumen, doch Nachtblau will ihn nicht ziehen lassen. Nun steht eine Pforte zwischen dem Mäusereich und zahllosen Traumwelten offen. Träume entfliehen und beschwipste Wichtel folgen ihnen.",
     "tags": ["Weihnachten", "Traumwesen", "Krähe"],

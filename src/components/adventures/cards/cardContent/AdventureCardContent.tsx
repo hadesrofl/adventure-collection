@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { DictionaryContext } from "@dictionaries/helpers/dictionaryContext";
 import { AdventureCardCommonProps } from "./AdventureCardCommonProps";
 import { getSummaryParagraphs } from "@domain/models/adventure";
+import { TestIds } from "@tests/testIds";
 
 export function createLevelRangeLabel(adventure: Adventure) {
   let levelRange = "";
@@ -45,7 +46,11 @@ export function AdventureCardContent({
     <Stack direction="column" spacing={2} alignItems="center">
       <AdventureCardHeader adventure={adventure} />
       {showSummary && <AdventureCardSummary adventure={adventure} />}
-      <Grid container>
+      <Grid
+        data-testid={TestIds.adventureCard.content(adventure.id)}
+        container
+        textAlign="center"
+      >
         <Grid item xs={6} md={3}>
           <Typography variant="body2" component="span">
             {dictionary.AdventureCards.cardFront.pageCount}:

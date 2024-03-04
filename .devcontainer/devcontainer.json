@@ -16,7 +16,7 @@
 		5432
 	],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm install && npm run db:schema:build && npm run db:migrate:dev",
+	"postCreateCommand": "npm install && npm run db:schema:build && npm run db:migrate:dev && npm run db:client:generate",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -28,7 +28,8 @@
 				"mtxr.sqltools",
 				"mtxr.sqltools-driver-pg",
 				"fabiospampinato.vscode-todo-plus",
-				"ajmnz.prisma-import"
+				"ajmnz.prisma-import",
+				"ryanluker.vscode-coverage-gutters"
 			],
 			"settings": {
 			    "sqltools.connections": [

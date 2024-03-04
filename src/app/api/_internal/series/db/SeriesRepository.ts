@@ -3,11 +3,14 @@ import { PrismaClient } from "@prisma/client";
 import { Repository } from "@app/api/_internal/shared/db/BaseRepository";
 import { SeriesFull, seriesIncludes } from "@domain/models/series";
 import { findAdventuresToDisconnect } from "../../shared/db/helper/findLinkedAdventures";
-import dbContext from "../../shared/db/dbContext";
+import AdventureRepository from "../../adventures/db/AdventureRepository";
 
 class SeriesRepository extends Repository<SeriesFull> {
-  constructor(client: PrismaClient) {
+  private readonly adventureRepository: AdventureRepository;
+
+  constructor(client: PrismaClient, adventureRepository: AdventureRepository) {
     super(client);
+    this.adventureRepository = adventureRepository;
   }
 
   public async create(series: SeriesFull) {
@@ -22,6 +25,7 @@ class SeriesRepository extends Repository<SeriesFull> {
             };
           }),
         },
+        system: undefined,
       },
       include: seriesIncludes,
     });
@@ -30,7 +34,7 @@ class SeriesRepository extends Repository<SeriesFull> {
 
   public async edit(series: SeriesFull) {
     const adventuresToDisconnect = await findAdventuresToDisconnect(
-      dbContext.adventures,
+      this.adventureRepository,
       {
         where: { seriesId: series.id },
       },
@@ -51,6 +55,8 @@ class SeriesRepository extends Repository<SeriesFull> {
           }),
           disconnect: adventuresToDisconnect,
         },
+        systemId: series.systemId,
+        system: undefined,
       },
       include: seriesIncludes,
     });

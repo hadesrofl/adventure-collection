@@ -13,7 +13,7 @@ export type DbContext = {
 
 const adventures = new AdventureRepository(prismaClient);
 const systems = new SystemRepository(prismaClient, adventures);
-const series = new SeriesRepository(prismaClient);
+const series = new SeriesRepository(prismaClient, adventures);
 const genres = new GenreRepository(prismaClient, adventures);
 
 const dbContext: DbContext = {

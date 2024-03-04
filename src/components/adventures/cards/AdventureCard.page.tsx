@@ -29,21 +29,33 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
     render(<AdventureCard {...this.props} />);
   }
 
-  getCardOnPage() {
+  private get cardOnPage() {
     return screen.queryByTestId(
       TestIds.adventureCard.card(this.props.adventure.id)
     );
   }
 
+  get header() {
+    return screen.queryByTestId(
+      TestIds.adventureCard.header(this.props.adventure.id)
+    );
+  }
+
+  get contentBody() {
+    return screen.queryByTestId(
+      TestIds.adventureCard.content(this.props.adventure.id)
+    );
+  }
+
   get linkToDetailPage() {
-    const card = this.getCardOnPage();
+    const card = this.cardOnPage;
     if (card === null) return null;
     return within(card).queryByTestId(TestIds.adventureCard.primaryAction);
   }
 
   get image() {
     if (this.props.adventure.image === null) return null;
-    const card = this.getCardOnPage();
+    const card = this.cardOnPage;
     if (card === null) return null;
     const imageSrcEncoded = encodeURIComponent(this.props.adventure.image);
 
@@ -53,29 +65,31 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
   }
 
   get title() {
-    return this.getCardOnPage();
+    return this.cardOnPage;
   }
 
   get system() {
-    const card = this.getCardOnPage();
-    if (card === null) return null;
-    return within(card).queryByText(this.props.adventure.system.name);
+    const header = this.header;
+    if (header === null) return null;
+    return within(header).queryByText(this.props.adventure.system.name);
   }
 
   get tags() {
-    const card = this.getCardOnPage();
-    if (card === null) return null;
-    return card.querySelectorAll(".MuiChip-root");
+    const contentBody = screen.queryByTestId(
+      TestIds.adventureCard.tagList(this.props.adventure.id)
+    );
+    if (contentBody === null) return null;
+    return contentBody.querySelectorAll(".MuiChip-root");
   }
 
   get summary() {
-    const card = this.getCardOnPage();
-    if (card === null) return null;
-    return within(card).queryByText(this.props.adventure.summary);
+    const contentBody = this.contentBody;
+    if (contentBody === null) return null;
+    return within(contentBody).queryByText(this.props.adventure.summary);
   }
 
   private async getLabel(label: string) {
-    const card = this.getCardOnPage();
+    const card = this.cardOnPage;
     if (card === null) return null;
 
     return within(card).queryByText(label);
@@ -128,13 +142,13 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
   }
 
   get deleteButton() {
-    const card = this.getCardOnPage();
+    const card = this.cardOnPage;
     if (card === null) return null;
     return within(card).queryByTestId("DeleteIcon");
   }
 
   get editButton() {
-    const card = this.getCardOnPage();
+    const card = this.cardOnPage;
     if (card === null) return null;
     return within(card).queryByTestId("EditIcon");
   }

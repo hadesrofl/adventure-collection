@@ -21,7 +21,7 @@ export default async function AdventureCardGallery({
             item
             xs={12}
             md={6}
-            lg={4}
+            lg={3}
             key={crypto.randomUUID()}
           >
             <AdventureCard

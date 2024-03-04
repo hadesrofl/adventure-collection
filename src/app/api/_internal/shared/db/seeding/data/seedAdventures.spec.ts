@@ -9,6 +9,7 @@ import {
   mockAdventureSeeds,
   mockAdventures,
 } from "@tests/mockData/mockAdventures";
+import { mockSeries } from "@tests/mockData/mockSeries";
 
 function mockContentOfImportingFile() {
   fsReadFileSyncMock.mockReturnValueOnce(JSON.stringify(mockAdventureSeeds));
@@ -32,7 +33,7 @@ describe("Seed Adventures", () => {
       prismaMock.adventure.create.mockResolvedValueOnce(adventure)
     );
 
-    await seedAdventures(repository, mockSystems, mockGenres);
+    await seedAdventures(repository, mockSystems, mockGenres, mockSeries);
 
     expect(logSpy).toHaveBeenCalledWith("Seeding Adventures...");
     mockAdventures.forEach((text) => expect(logSpy).toHaveBeenCalledWith(text));
@@ -44,7 +45,7 @@ describe("Seed Adventures", () => {
   it("imports nothing without proper seed directory path", async () => {
     prismaMock.adventure.findMany.mockResolvedValue([]);
 
-    await seedAdventures(repository, mockSystems, mockGenres);
+    await seedAdventures(repository, mockSystems, mockGenres, mockSeries);
 
     [
       "Seeding Adventures...",
@@ -59,7 +60,7 @@ describe("Seed Adventures", () => {
     mockContentOfImportingFile();
     prismaMock.adventure.findMany.mockResolvedValue(mockAdventures);
 
-    await seedAdventures(repository, mockSystems, mockGenres);
+    await seedAdventures(repository, mockSystems, mockGenres, mockSeries);
 
     ["Seeding Adventures...", , "Adventures inserted: 0"].forEach((text) =>
       expect(logSpy).toHaveBeenCalledWith(text)
@@ -70,6 +71,7 @@ describe("Seed Adventures", () => {
 
   it("throws error when genre is not found", async () => {
     const adventureSeed = mockAdventureSeeds[0];
+    const oldGenres = adventureSeed.genres;
     const nonExistingGenre = "NotExistingGenre";
     adventureSeed.genres.push(nonExistingGenre);
     await checkErrorOnCreation(
@@ -77,11 +79,13 @@ describe("Seed Adventures", () => {
       repository,
       `Genre '${nonExistingGenre}' not found in database. Run seeding of genres first!`
     );
+    adventureSeed.genres.pop();
     expect(prismaMock.adventure.create).toHaveBeenCalledTimes(0);
   });
 
   it("throws error when system is not found", async () => {
     const adventureSeed = mockAdventureSeeds[0];
+    const oldSystem = adventureSeed.system;
     const nonExistingSystem = "NotExistingSystem";
     adventureSeed.system = nonExistingSystem;
     await checkErrorOnCreation(
@@ -89,6 +93,21 @@ describe("Seed Adventures", () => {
       repository,
       `System '${nonExistingSystem}' not found in database. Run seeding of systems first!`
     );
+    adventureSeed.system = oldSystem;
+    expect(prismaMock.adventure.create).toHaveBeenCalledTimes(0);
+  });
+
+  it("throws error when series is not found", async () => {
+    const adventureSeed = mockAdventureSeeds[0];
+    const oldSeries = adventureSeed.series;
+    const notExistingSeries = "NotExistingSeries";
+    adventureSeed.series = notExistingSeries;
+    await checkErrorOnCreation(
+      adventureSeed,
+      repository,
+      `Series '${notExistingSeries}' not found in database. Run seeding of series first!`
+    );
+    adventureSeed.series = oldSeries;
     expect(prismaMock.adventure.create).toHaveBeenCalledTimes(0);
   });
 });
@@ -100,7 +119,7 @@ async function checkErrorOnCreation(
 ) {
   fsReadFileSyncMock.mockReturnValueOnce(JSON.stringify([adventureSeed]));
   try {
-    await seedAdventures(repository, mockSystems, mockGenres);
+    await seedAdventures(repository, mockSystems, mockGenres, mockSeries);
   } catch (e) {
     const error = e as Error;
     expect(error.message).toBe(errorMessage);

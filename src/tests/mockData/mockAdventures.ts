@@ -53,6 +53,7 @@ export const mockAdventureSeeds: AdventureSeedData[] = [
     tags: ["Funnel", "Burg", "Tiermenschen", "Dämonen"],
     system: "Dungeon Crawl Classics",
     genres: ["Weird Fantasy", "Sword & Sorcery"],
+    series: "DCC Trichter",
     image:
       "https://www.system-matters.de/wp-content/uploads/2019/12/DCC-Segler.jpg",
     pageCount: 18,
@@ -67,6 +68,7 @@ export const mockAdventureSeeds: AdventureSeedData[] = [
     tags: ["Weihnachten", "Traumwesen", "Krähe"],
     system: "Mausritter",
     genres: ["Sword & Sorcery"],
+    series: "Weihnachtsabenteuer",
     image:
       "https://www.system-matters.de/wp-content/uploads/Mausritter-07-1.png",
     pageCount: 6,
