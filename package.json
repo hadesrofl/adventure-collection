@@ -16,7 +16,7 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.3",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@formatjs/intl-localematcher": "^0.5.4",
     "@mui/icons-material": "^5.15.11",
