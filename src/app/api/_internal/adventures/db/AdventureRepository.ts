@@ -36,22 +36,20 @@ class AdventureRepository extends Repository<AdventureFull> {
   }
 
   public async edit(adventure: AdventureFull) {
-    const oldAdventureEntry = await this.dbContext.adventure.findFirst({
-      where: { id: adventure.id },
-      include: adventureIncludes,
-    });
-    const tagsToDelete =
-      oldAdventureEntry !== null && oldAdventureEntry !== undefined
-        ? getTagsToDelete(oldAdventureEntry, adventure)
-        : [];
-    const seriesToDelete = [];
+    const {
+      adventureWithoutRelations,
+      tagsToDelete,
+      genresToDelete,
+      systemUpdate,
+      seriesUpdate,
+    } = await this.getUpdateData(adventure);
 
     const updated = await this.dbContext.adventure.update({
       where: {
         id: adventure.id,
       },
       data: {
-        ...adventure,
+        ...adventureWithoutRelations,
         tags: {
           connectOrCreate: adventure.tags.map((tag) => {
             return { where: { id: tag.id }, create: { name: tag.name } };
@@ -62,12 +60,8 @@ class AdventureRepository extends Repository<AdventureFull> {
           connectOrCreate: adventure.genres.map((genre) => {
             return { where: { id: genre.id }, create: { name: genre.name } };
           }),
-          disconnect: [],
+          disconnect: genresToDelete,
         },
-        systemId: adventure.systemId,
-        system: undefined,
-        seriesId: adventure.seriesId ?? undefined,
-        series: undefined,
       },
       include: adventureIncludes,
     });
@@ -101,6 +95,50 @@ class AdventureRepository extends Repository<AdventureFull> {
       include: adventureIncludes,
     });
     return deleted;
+  }
+
+  private async getUpdateData(adventure: AdventureFull) {
+    const oldAdventureEntry = await this.dbContext.adventure.findFirst({
+      where: { id: adventure.id },
+      include: adventureIncludes,
+    });
+
+    const tagsToDelete =
+      oldAdventureEntry !== null && oldAdventureEntry !== undefined
+        ? getTagsToDelete(oldAdventureEntry, adventure)
+        : [];
+
+    const genresToDelete =
+      oldAdventureEntry?.genres.filter(
+        (genre) => !adventure.genres.find((g) => g.name === genre.name)
+      ) ?? [];
+
+    const seriesUpdate = {
+      connect:
+        adventure.seriesId !== null ? { id: adventure.seriesId } : undefined,
+      disconnect:
+        oldAdventureEntry !== null &&
+        oldAdventureEntry !== undefined &&
+        oldAdventureEntry.seriesId !== null
+          ? { id: oldAdventureEntry?.seriesId }
+          : undefined,
+    };
+
+    const systemUpdate =
+      adventure.systemId === oldAdventureEntry?.systemId
+        ? undefined
+        : { connect: { id: adventure.systemId } };
+
+    const adventureWithoutRelations = [adventure].map(
+      ({ id, system, series, ...rest }) => rest
+    )[0];
+    return {
+      adventureWithoutRelations,
+      tagsToDelete,
+      genresToDelete,
+      systemUpdate,
+      seriesUpdate,
+    };
   }
 }
 

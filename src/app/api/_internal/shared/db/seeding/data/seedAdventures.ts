@@ -5,6 +5,7 @@ import { Genre, Tag } from "@prisma/client";
 import { Repository } from "../../BaseRepository";
 import { createIfNotExists, readJsonFile } from "../helper/seedHelper";
 import { Languages } from "@domain/models/languages";
+import { buildAdventure } from "@domain/factories/AdventureFactory";
 
 export interface AdventureSeedData {
   name: string;
@@ -18,41 +19,6 @@ export interface AdventureSeedData {
   minLevel?: number;
   maxLevel?: number;
   series?: string;
-}
-
-function createAdventure(
-  name: string,
-  summary: string,
-  systemId: number,
-  system: System,
-  genres: Genre[],
-  tags: Tag[],
-  language: Languages,
-  image: string | null = null,
-  pageCount: number | null = null,
-  minLevel: number | null = null,
-  maxLevel: number | null = null,
-  series: Series | null = null
-): AdventureFull {
-  return {
-    id: 0,
-    systemId,
-    system,
-    image,
-    language,
-    createdAt: new Date(Date.now()),
-    updatedAt: new Date(Date.now()),
-    alreadyPlayed: false,
-    pageCount,
-    minLevel,
-    maxLevel,
-    name,
-    summary,
-    genres,
-    tags,
-    seriesId: series !== null ? series.id : null,
-    series,
-  };
 }
 
 function findSystem(name: string, systems: System[]) {
@@ -108,7 +74,7 @@ function getAdventureData(
       adventure.series !== undefined
         ? findSeries(adventure.series, series)
         : undefined;
-    return createAdventure(
+    return buildAdventure(
       adventure.name,
       adventure.summary,
       system.id,

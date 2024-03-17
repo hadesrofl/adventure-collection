@@ -1,4 +1,23 @@
 {
+  "AdventureForm": {
+    "labels": {
+      "title": "Titel",
+      "tags": "Schlagwörter",
+      "summary": "Zusammenfassung",
+      "languages": "Sprachen",
+      "systems": "Systeme",
+      "series": "Reihe",
+      "alreadyPlayed": "Bereits gespielt?",
+      "pageCount": "Seitenzahl",
+      "minLevel": "Mininmale Stufe",
+      "maxLevel": "Maximale Stufe",
+      "image": "Bildquelle",
+      "none": "Keine"
+    },
+    "buttons": {
+      "save": "Speichern"
+    }
+  },
   "AdventureCards": {
     "cardFront": {
       "pageCount": "Seitenzahl",
@@ -33,6 +52,39 @@
           "backToHome": "Zurück zur Startseite"
         }
       }
+    },
+    "Joi": {
+      "string.empty": "{#label} darf nicht leer sein",
+      "string.pattern.base": "{#label} folgt nicht dem regulärischen Ausdruck: {#regex}",
+      "number.positive": "{#label} muss positiv sein",
+      "number.base": "{#label} muss eine Zahl sein",
+      "number.min": "{#label} muss größer oder gleich dem Wert von \"{#limit.key}\" sein",
+      "number.greater": "{#label} muss größer als \"{#limit}\" sein"
+    }
+  },
+  "Languages": {
+    "German": "Deutsch",
+    "English": "Englisch"
+  },
+  "Models": {
+    "adventures": {
+      "name": "Titel",
+      "summary": "Zusammenfassung",
+      "systemId": "System Id",
+      "system": "System",
+      "seriesId": "Reihen Id",
+      "series": "Reihe",
+      "genres": "Genres",
+      "tags": "Schlagwörter",
+      "language": "Sprache",
+      "alreadyPlayed": "Bereits Gespielt",
+      "id": "Id",
+      "createdAt": "Erstellt am",
+      "UpdatedAt": "Aktualisiert am",
+      "minLevel": "Mindest Stufe",
+      "maxLevel": "Maximale Stufe",
+      "pageCount": "Seitenzahl",
+      "image": "Bildquelle"
     }
   }
 }

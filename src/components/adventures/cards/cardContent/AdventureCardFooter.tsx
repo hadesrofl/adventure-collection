@@ -7,6 +7,8 @@ import { DictionaryContext } from "@dictionaries/helpers/dictionaryContext";
 import { useContext } from "react";
 import { AdventureCardCommonProps } from "./AdventureCardCommonProps";
 import { deleteAdventureById } from "@app/api/_actions/adventures/deleteAdventures";
+import Link from "next/link";
+import AppRoutes from "@app/appRoutes";
 
 export default function AdventureCardFooter({
   adventure,
@@ -28,6 +30,7 @@ export default function AdventureCardFooter({
     if ("id" in adventure) {
       try {
         await deleteAdventureById(adventure.id);
+        router.push(AppRoutes.adventureRoutes.collection);
         router.refresh();
       } catch (error) {
         console.log(error);
@@ -39,10 +42,11 @@ export default function AdventureCardFooter({
       <Stack spacing={2} width="100%">
         <Divider />
         <Stack direction="row-reverse">
-          {/* TODO: Add here link to edit form */}
-          <IconButton color="secondary">
-            <Edit />
-          </IconButton>
+          <Link href={AppRoutes.adventureRoutes.edit(adventure.id)}>
+            <IconButton color="secondary">
+              <Edit />
+            </IconButton>
+          </Link>
 
           <DeleteDialogButton
             color="error"

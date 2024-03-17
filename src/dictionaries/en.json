@@ -1,4 +1,23 @@
 {
+  "AdventureForm": {
+    "labels": {
+      "title": "Title",
+      "tags": "Tags",
+      "summary": "Summary",
+      "languages": "Languages",
+      "systems": "Systems",
+      "series": "Series",
+      "alreadyPlayed": "Already Played?",
+      "pageCount": "Page Count",
+      "minLevel": "Min Level",
+      "maxLevel": "Max Level",
+      "image": "Image Source",
+      "none": "None"
+    },
+    "buttons": {
+      "save": "Save"
+    }
+  },
   "AdventureCards": {
     "cardFront": {
       "pageCount": "Page Count",
@@ -33,6 +52,39 @@
           "backToHome": "Back to Start"
         }
       }
+    },
+    "Joi": {
+      "string.empty": "{#label} is not allowed to be empty",
+      "string.pattern.base": "{#label} does not match the regular expression: {#regex}",
+      "number.positive": "{#label} must be positive",
+      "number.base": "{#label} must be a number",
+      "number.min": "{#label} must be equal or greater than {#limit.key}",
+      "number.greater": "{#label} must be greater than {#limit}"
+    }
+  },
+  "Languages": {
+    "German": "German",
+    "English": "English"
+  },
+  "Models": {
+    "adventures": {
+      "name": "Title",
+      "summary": "Summary",
+      "systemId": "System Id",
+      "system": "System",
+      "seriesId": "Series Id",
+      "series": "Series",
+      "genres": "Genres",
+      "tags": "Tags",
+      "language": "Language",
+      "alreadyPlayed": "Already played",
+      "id": "Id",
+      "createdAt": "Created at",
+      "UpdatedAt": "Updated at",
+      "minLevel": "Min Level",
+      "maxLevel": "Max Level",
+      "pageCount": "Page Count",
+      "image": "Image"
     }
   }
 }
