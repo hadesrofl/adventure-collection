@@ -21,7 +21,7 @@
     "@formatjs/intl-localematcher": "^0.5.4",
     "@mui/icons-material": "^5.15.11",
     "@mui/material": "^5.15.11",
-    "@prisma/client": "^5.10.2",
+    "@prisma/client": "^5.11.0",
     "joi": "^17.12.2",
     "negotiator": "^0.6.3",
     "next": "14.1.3",
