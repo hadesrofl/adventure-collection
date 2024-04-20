@@ -186,6 +186,7 @@ describe("Adventure Form", () => {
           const tag = initialAdventure.tags[i];
           await act(async () => {
             await page.deselect(AdventureFormFields.Tags, tag.name);
+            await new Promise((resolve) => setTimeout(resolve, 250));
           });
         }
 
