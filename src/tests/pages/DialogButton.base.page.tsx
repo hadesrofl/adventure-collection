@@ -19,18 +19,18 @@ export class DialogButtonBasePage {
   }
 
   get dialogTitle() {
-    return screen.queryByText(this.title);
+    return screen.getByText(this.title);
   }
 
   get contentText() {
-    return screen.queryByText(this.text);
+    return screen.getByText(this.text);
   }
 
   get cancelButton() {
-    return screen.queryByText(this.cancelButtonLabel);
+    return screen.getByText(this.cancelButtonLabel);
   }
 
   get okButton() {
-    return screen.queryByText(this.okButtonLabel);
+    return screen.getByText(this.okButtonLabel);
   }
 }

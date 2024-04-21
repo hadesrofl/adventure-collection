@@ -36,7 +36,7 @@ class SeriesRepository extends Repository<SeriesFull> {
     const adventuresToDisconnect = await findAdventuresToDisconnect(
       this.adventureRepository,
       {
-        where: { seriesId: series.id },
+        seriesId: series.id,
       },
       series.adventures
     );
