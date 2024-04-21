@@ -34,4 +34,16 @@ export const TestIds = {
       submit: "adventure-form-submit",
     },
   },
+  seriesGallery: {
+    entry: (name: string) => `series-gallery-entry-${name}`,
+    badge: (name: string) => `series-gallery-badge-${name}`,
+    addButton: "series-gallery-add-button",
+  },
+  seriesButtonGroup: {
+    root: (name: string) => `series-button-group-${name}`,
+    inputDialogButton: (name: string) =>
+      `series-button-group-input-dialog-button-${name}`,
+    deleteDialogButton: (name: string) =>
+      `series-button-group-delete-dialog-button-${name}`,
+  },
 };

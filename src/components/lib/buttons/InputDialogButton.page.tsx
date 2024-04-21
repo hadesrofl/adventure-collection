@@ -15,7 +15,7 @@ export class InputDialogButtonPage extends DialogButtonBasePage {
     this.user = userEvent.setup();
   }
 
-  async editTag(oldName: string, newName: string) {
+  async edit(oldName: string, newName: string) {
     const inputField = await screen.findByDisplayValue(oldName);
     await this.user.clear(inputField);
     await this.user.type(inputField, newName);

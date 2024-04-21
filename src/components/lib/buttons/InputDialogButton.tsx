@@ -1,6 +1,5 @@
 import {
   IconButton,
-  Dialog,
   DialogTitle,
   DialogContent,
   DialogContentText,
@@ -11,6 +10,7 @@ import {
 } from "@mui/material";
 import { ChangeEvent, ReactNode, useState } from "react";
 import { ActionDialogProps } from "../dialogs/ActionDialog";
+import BaseDialog from "../dialogs/BaseDialog";
 
 export interface InputDialogButtonProps
   extends IconButtonProps,
@@ -55,7 +55,11 @@ export default function InputDialogButton({
       <IconButton onClick={handleClickOpen} {...props}>
         {icon}
       </IconButton>
-      <Dialog open={open} onClose={handleClose}>
+      <BaseDialog
+        open={open}
+        onCancel={handleClose}
+        borderColor={props.borderColor}
+      >
         <DialogTitle>{titleText}</DialogTitle>
         <DialogContent>
           <DialogContentText>{contentText}</DialogContentText>
@@ -78,7 +82,7 @@ export default function InputDialogButton({
             {okButton.label}
           </Button>
         </DialogActions>
-      </Dialog>
+      </BaseDialog>
     </>
   );
 }
