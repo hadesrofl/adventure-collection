@@ -43,6 +43,50 @@
       }
     }
   },
+  "AddSeriesDialogButton": {
+    "labels": {
+      "series": "Serie"
+    },
+    "systemPlaceholder": "Bitte wähle ein System",
+    "titleText": "Serie hinzufügen",
+    "contentText": "Wähle bitte ein System und gib den Namen der Serie ein:",
+    "cancelButton": "Abbrechen",
+    "okButton": "Hinzufügen"
+  },
+  "SeriesGallery": {
+    "headers": {
+      "system": "System",
+      "series": "Serie",
+      "actions": "Aktionen"
+    }
+  },
+  "SeriesButtonGroup": {
+    "deleteDialog": {
+      "title": "Serie löschen",
+      "contextText": "Bist du sicher, dass die folgende Serie gelöscht werden soll:",
+      "buttons": {
+        "cancelLabel": "Abbrechen",
+        "okLabel": "Löschen"
+      }
+    },
+    "editDialog": {
+      "title": "Serie bearbeiten",
+      "label": "Serie",
+      "contextText": "Bitte trage den neuen Namen für die Serie ein:",
+      "buttons": {
+        "cancelLabel": "Abbrechen",
+        "okLabel": "Speichern"
+      }
+    }
+  },
+  "NoSeriesDialog": {
+    "title": "Ein neue Serie erstellen?",
+    "contextText": "Es scheint, dass keine Serien existieren.",
+    "buttons": {
+      "no": "Auf der Seite bleiben",
+      "yes": "Erstellen"
+    }
+  },
   "Errors": {
     "pages": {
       "generic": {

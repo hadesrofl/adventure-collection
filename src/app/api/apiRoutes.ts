@@ -4,6 +4,12 @@ import {
   editAdventure,
   getAdventure,
 } from "./_internal/adventures/adventureRoutes";
+import {
+  createSeries,
+  editSeries,
+  getSeries,
+  deleteSeries,
+} from "./_internal/series/seriesRoutes";
 
 const ApiRoutes = {
   adventures: {
@@ -11,6 +17,12 @@ const ApiRoutes = {
     editAdventure,
     getAdventure,
     deleteAdventure,
+  },
+  series: {
+    createSeries,
+    editSeries,
+    getSeries,
+    deleteSeries,
   },
 };
 

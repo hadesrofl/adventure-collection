@@ -33,7 +33,7 @@ export class SystemRepository extends Repository<SystemFull> {
   public async edit(system: SystemFull) {
     const adventuresToDisconnect = await findAdventuresToDisconnect(
       this.adventureRepository,
-      { seriesId: system.id },
+      { systemId: system.id },
       system.adventures
     );
 
