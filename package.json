@@ -48,7 +48,7 @@
     "node-mocks-http": "^1.14.1",
     "postcss": "^8",
     "prisma-import": "^1.0.5",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
