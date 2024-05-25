@@ -25,6 +25,7 @@
       "@contexts/*": ["./src/contexts/*"],
       "@domain/*": ["./src/domain/*"],
       "@dictionaries/*": ["./src/dictionaries/*"],
+      "@hooks/*": ["./src/hooks/*"],
       "@tests/*": ["./src/tests/*"]
     }
   },

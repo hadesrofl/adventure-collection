@@ -5,6 +5,11 @@ import { prismaMock } from "@tests/setup/prisma";
 import { waitFor } from "@testing-library/react";
 import { adventureIncludes } from "@domain/models/adventure";
 import { mockUseRouter } from "@tests/setup/nextNavigation";
+import useIsSmallScreen from "@hooks/useIsSmallScreen";
+
+jest.mock("../../../hooks/useIsSmallScreen");
+
+const mockUseIsSmallScreen = jest.mocked(useIsSmallScreen);
 
 async function openDeleteDialog(page: AdventureCardPageObject) {
   expect(page.deleteButton).toBeInTheDocument();
@@ -17,14 +22,15 @@ async function openDeleteDialog(page: AdventureCardPageObject) {
 }
 
 describe("Adventure Card", () => {
-  it("shows the card", async () => {
+  it.each([[true, false]])("shows the card", async (isSmallScreen: boolean) => {
     const adventure = mockAdventures[0];
     const page = new AdventureCardPageObject({ adventure });
     page.render();
-    await page.assertToBeInTheDocument();
+    await page.assertToBeInTheDocument(isSmallScreen);
   });
 
   it("shows card with link to detail page", () => {
+    mockUseIsSmallScreen.mockReturnValue(true);
     const adventure = mockAdventures[0];
     const href = AppRoutes.adventureRoutes.show(adventure.id);
     const page = new AdventureCardPageObject({ adventure, href });
@@ -33,6 +39,19 @@ describe("Adventure Card", () => {
     const linkToDetailPage = page.linkToDetailPage;
     expect(linkToDetailPage).toBeInTheDocument();
     expect(page.linkToDetailPage?.getAttribute("href")).toBe(href);
+  });
+
+  it("shows drawer to detail page", async () => {
+    mockUseIsSmallScreen.mockReturnValue(false);
+    const adventure = mockAdventures[0];
+    const href = AppRoutes.adventureRoutes.show(adventure.id);
+    const page = new AdventureCardPageObject({ adventure, href });
+
+    page.render();
+    expect(page.linkToDetailPage).not.toBeInTheDocument();
+    await page.clickCard();
+
+    expect(page.drawer).toBeInTheDocument();
   });
 
   it("deletes adventure", async () => {

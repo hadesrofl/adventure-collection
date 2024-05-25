@@ -1,4 +1,8 @@
 export const TestIds = {
+  icons: {
+    edit: "EditIcon",
+    delete: "DeleteIcon",
+  },
   adventureCard: {
     card: (id: number) => `adventureCard-${id}`,
     header: (id: number) => `adventureCardHeader-${id}`,

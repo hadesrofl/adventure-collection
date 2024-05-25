@@ -11,6 +11,8 @@ import userEvent, { UserEvent } from "@testing-library/user-event";
 import { DeleteDialogButtonPage } from "@components/lib/buttons/DeleteDialogButton.page";
 
 export class AdventureCardPageObject extends BasePage<AdventureCardContentProps> {
+  private drawerSelector = ".MuiDrawer-paper";
+  private tagSelector = ".MuiChip-root";
   private user: UserEvent;
   dialog: DeleteDialogButtonPage;
 
@@ -33,6 +35,10 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
     return screen.queryByTestId(
       TestIds.adventureCard.card(this.props.adventure.id)
     );
+  }
+
+  get drawer() {
+    return document.querySelector(this.drawerSelector);
   }
 
   get header() {
@@ -79,7 +85,7 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
       TestIds.adventureCard.tagList(this.props.adventure.id)
     );
     if (contentBody === null) return null;
-    return contentBody.querySelectorAll(".MuiChip-root");
+    return contentBody.querySelectorAll(this.tagSelector);
   }
 
   get summary() {
@@ -144,13 +150,13 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
   get deleteButton() {
     const card = this.cardOnPage;
     if (card === null) return null;
-    return within(card).queryByTestId("DeleteIcon");
+    return within(card).queryByTestId(TestIds.icons.delete);
   }
 
   get editButton() {
     const card = this.cardOnPage;
     if (card === null) return null;
-    return within(card).queryByTestId("EditIcon");
+    return within(card).queryByTestId(TestIds.icons.edit);
   }
 
   async clickButton(button: "delete" | "edit") {
@@ -160,10 +166,18 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
     if (buttonToClick === null)
       throw new Error(`Can't click on ${button} button`);
 
-    this.user.click(buttonToClick);
+    await this.user.click(buttonToClick);
   }
 
-  async assertToBeInTheDocument() {
+  async clickCard() {
+    const card = this.image;
+
+    if (card === null) throw new Error(`Can't click on card`);
+
+    await this.user.click(card);
+  }
+
+  async assertToBeInTheDocument(isSmallScreen: boolean) {
     if (this.props.adventure.image !== null)
       expect(this.image).toBeInTheDocument();
 
@@ -179,7 +193,8 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
     if (!this.props.showSummary) expect(this.summary).not.toBeInTheDocument();
     else expect(this.summary).toBeInTheDocument();
 
-    if (!this.props.href) expect(this.linkToDetailPage).not.toBeInTheDocument();
+    if (!this.props.href || !isSmallScreen)
+      expect(this.linkToDetailPage).not.toBeInTheDocument();
     else expect(this.linkToDetailPage).toBeInTheDocument();
 
     expect(await this.pageCountLabel()).toBeInTheDocument();
