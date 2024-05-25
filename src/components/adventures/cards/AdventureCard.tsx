@@ -1,82 +1,66 @@
 "use client";
-import {
-  Card,
-  CardMedia,
-  Box,
-  CardContent,
-  CardActions,
-  CardActionArea,
-} from "@mui/material";
-import Image from "next/image";
-import {
-  AdventureCardContent,
-  AdventureCardContentProps,
-} from "./cardContent/AdventureCardContent";
-import Link from "next/link";
+import { Card, Box, CardActions, CardActionArea, Drawer } from "@mui/material";
+
+import { AdventureCardContentProps } from "./cardContent/AdventureCardContent";
 import AdventureCardFooter from "./cardContent/AdventureCardFooter";
 import { TestIds } from "@tests/testIds";
-
-function AdventureDetailCardWrapper({
-  adventure,
-  showSummary: summaryComponent,
-}: AdventureCardContentProps) {
-  return (
-    <>
-      {adventure.image ? (
-        <CardMedia
-          component="div"
-          sx={{
-            display: "flex",
-            width: "100%",
-            height: "50vh",
-            justifyContent: "center",
-            position: "relative",
-          }}
-        >
-          <Image src={adventure.image} alt="" fill />
-        </CardMedia>
-      ) : (
-        <Box />
-      )}
-      <CardContent className="flex justify-center mt-1">
-        <AdventureCardContent
-          adventure={adventure}
-          showSummary={summaryComponent}
-        />
-      </CardContent>
-    </>
-  );
-}
+import { useState } from "react";
+import useIsSmallScreen from "@hooks/useIsSmallScreen";
+import Link from "next/link";
+import AdventureCardContainer from "./cardContent/AdventureCardContainer";
 
 export default function AdventureCard({
   adventure,
   showSummary: summaryComponent,
   href,
 }: AdventureCardContentProps) {
-  return (
-    <Card
-      data-testid={TestIds.adventureCard.card(adventure.id)}
-      className="w-screen md:max-w-[600px] flex flex-col justify-between"
-    >
-      {href ? (
-        <CardActionArea>
-          <Link href={href} data-testid={TestIds.adventureCard.primaryAction}>
-            <AdventureDetailCardWrapper
-              adventure={adventure}
-              showSummary={summaryComponent}
-            />
-          </Link>
-        </CardActionArea>
-      ) : (
-        <AdventureDetailCardWrapper
-          adventure={adventure}
-          showSummary={summaryComponent}
-        />
-      )}
+  const [open, setOpen] = useState<boolean>(false);
+  const isSmallScreen = useIsSmallScreen();
 
-      <CardActions>
-        <AdventureCardFooter adventure={adventure} />
-      </CardActions>
-    </Card>
+  const handleCardClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const adventureContainer = (
+    <AdventureCardContainer
+      adventure={adventure}
+      showSummary={summaryComponent}
+    />
+  );
+
+  return (
+    <>
+      <Card
+        data-testid={TestIds.adventureCard.card(adventure.id)}
+        className="w-screen md:max-w-[600px] flex flex-col justify-between"
+      >
+        {isSmallScreen && href ? (
+          <CardActionArea>
+            <Link href={href} data-testid={TestIds.adventureCard.primaryAction}>
+              {adventureContainer}
+            </Link>
+          </CardActionArea>
+        ) : (
+          <CardActionArea onClick={handleCardClick}>
+            {adventureContainer}
+          </CardActionArea>
+        )}
+
+        <CardActions>
+          <AdventureCardFooter adventure={adventure} />
+        </CardActions>
+      </Card>
+      {!isSmallScreen && (
+        <Drawer open={open} onClose={handleClose} anchor="right">
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <AdventureCard adventure={adventure} showSummary={true} />
+          </Box>
+        </Drawer>
+      )}
+    </>
   );
 }

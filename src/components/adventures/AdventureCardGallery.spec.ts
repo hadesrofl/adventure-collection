@@ -2,6 +2,11 @@ import { mockAdventures } from "@tests/mockData/mockAdventures";
 import { AdventureGalleryPageObject } from "./AdventureCardGallery.page";
 import { AdventureCardPageObject } from "./cards/AdventureCard.page";
 import AppRoutes from "@app/appRoutes";
+import useIsSmallScreen from "@hooks/useIsSmallScreen";
+
+jest.mock("../../hooks/useIsSmallScreen");
+
+const mockUseIsSmallScreen = jest.mocked(useIsSmallScreen);
 
 describe("Adventure Gallery", () => {
   it("shows nothing", async () => {
@@ -11,7 +16,8 @@ describe("Adventure Gallery", () => {
     expect(page.cards.length).toBe(0);
   });
 
-  it("shows cards", async () => {
+  it.each([[true, false]])("shows cards", async (isSmallScreen: boolean) => {
+    mockUseIsSmallScreen.mockReturnValue(isSmallScreen);
     const page = new AdventureGalleryPageObject({
       adventures: mockAdventures,
     });
@@ -24,7 +30,7 @@ describe("Adventure Gallery", () => {
         adventure,
         href: AppRoutes.adventureRoutes.show(adventure.id),
       });
-      await card.assertToBeInTheDocument();
+      await card.assertToBeInTheDocument(isSmallScreen);
     }
   });
 });

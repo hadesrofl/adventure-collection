@@ -20,9 +20,10 @@ export default async function AdventureCardGallery({
             className="flex item-stretch"
             item
             xs={12}
-            md={6}
+            md={4}
             lg={3}
             key={crypto.randomUUID()}
+            justifyContent="center"
           >
             <AdventureCard
               adventure={adventure}
