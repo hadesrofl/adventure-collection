@@ -29,7 +29,12 @@ const config: Config = {
     "^@components/(.*)$": "<rootDir>/src/components/$1",
     "^@domain/(.*)$": "<rootDir>/src/domain/$1",
     "^@dictionaries/(.*)$": "<rootDir>/src/dictionaries/$1",
+    "^@features/(.*)$": "<rootDir>/src/features/$1",
+    "^@hooks/(.*)$": "<rootDir>/src/hooks/$1",
+    "^@repositories/(.*)$": "<rootDir>/src/repositories/$1",
+    "^@routes/(.*)$": "<rootDir>/src/routes/$1",
     "^@tests/(.*)$": "<rootDir>/src/tests/$1",
+    "^@utils/(.*)$": "<rootDir>/src/utils/$1",
   },
   // Add more setup options before each test is run
   setupFilesAfterEnv: [

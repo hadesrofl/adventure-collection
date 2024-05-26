@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
-import CenteredBox from "@components/lib/CenteredBox";
+import CenteredBox from "@components/CenteredBox";
 import React from "react";
 import { lightTheme } from "../../createTheme";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";

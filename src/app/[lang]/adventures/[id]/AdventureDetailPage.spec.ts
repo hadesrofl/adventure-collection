@@ -1,6 +1,6 @@
 import { prismaMock } from "@tests/setup/prisma";
 import { AdventureDetailPageObject } from "./AdventureDetailPage.page";
-import { mockAdventures } from "@tests/mockData/mockAdventures";
+import { mockAdventures } from "@features/adventures";
 
 async function initPage(
   id: Number,
@@ -27,7 +27,7 @@ describe("Adventure Detail Page", () => {
     const page = await initPage(id);
     await page.render();
 
-    await page.carousel.card.assertToBeInTheDocument();
+    await page.carousel.card.assertToBeInTheDocument(true);
   });
 
   it("shows no navigation arrows", async () => {

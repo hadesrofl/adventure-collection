@@ -1,5 +1,5 @@
-import dbContext from "@app/api/_internal/shared/db/dbContext";
-import AdventureForm from "@components/adventures/forms/AdventureForm";
+import dbContext from "@repositories/dbContext";
+import { AdventureForm } from "@features/adventures";
 
 export default async function AdventureCreatePage() {
   const tags = await dbContext.tags.list();

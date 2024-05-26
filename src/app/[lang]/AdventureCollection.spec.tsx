@@ -3,8 +3,8 @@ import { AdventureCollectionPageObject } from "./AdventureCollection.page";
 import { logSpy } from "@tests/mocks/consoleLog";
 import { mockSystems } from "@tests/mockData/mockSystems";
 import { mockGenres } from "@tests/mockData/mockGenres";
-import { mockAdventures } from "@tests/mockData/mockAdventures";
 import { waitFor } from "@testing-library/react";
+import { mockAdventures } from "@features/adventures";
 
 describe("Adventure Collection Page", () => {
   const beginSeedingLogMessage = "--- Begin Seeding ---";

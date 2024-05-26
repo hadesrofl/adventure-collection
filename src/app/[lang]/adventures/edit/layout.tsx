@@ -1,5 +1,5 @@
 import { CommonLayoutProps } from "../../layout";
-import CenteredBox from "@components/lib/CenteredBox";
+import CenteredBox from "@components/CenteredBox";
 import Card from "@mui/material/Card";
 
 export default function AdventureEditPageLayout({

@@ -7,11 +7,14 @@ import StatusCodes from "../../_internal/shared/StatusCodes";
 import { prismaMock } from "@tests/setup/prisma";
 import { ApiRequest, ApiResponse } from "@tests/mocks/fetch";
 import { Tag } from "@prisma/client";
-import { mockAdventures } from "@tests/mockData/mockAdventures";
+import {
+  buildAdventure,
+  AdventureFull,
+  adventureIncludes,
+} from "@features/adventures";
 import { createAdventureResponse } from "@tests/mocks/helper/createAdventureResponse";
-import { AdventureFull, adventureIncludes } from "@domain/models/adventure";
-import { buildAdventure } from "@domain/factories/AdventureFactory";
-import { Genre } from "@domain/models/genre";
+import { Genre } from "@features/genres";
+import { mockAdventures } from "@features/adventures";
 
 jest.mock("next/cache");
 

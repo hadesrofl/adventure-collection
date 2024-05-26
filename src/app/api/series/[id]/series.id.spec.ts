@@ -6,10 +6,10 @@ import { DELETE, PUT } from "./route";
 import StatusCodes from "../../_internal/shared/StatusCodes";
 import { prismaMock } from "@tests/setup/prisma";
 import { ApiRequest, ApiResponse } from "@tests/mocks/fetch";
-import { mockAdventures } from "@tests/mockData/mockAdventures";
 import { mockFullSeries, mockSeries } from "@tests/mockData/mockSeries";
-import { seriesIncludes } from "@domain/models/series";
+import { seriesIncludes } from "@features/series";
 import { buildSeriesDbStatement } from "@tests/helpers/buildSeriesDbStatement";
+import { mockAdventures } from "@features/adventures";
 
 jest.mock("next/cache");
 

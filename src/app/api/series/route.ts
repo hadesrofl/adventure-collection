@@ -1,8 +1,8 @@
-import { SeriesFull } from "@domain/models/series";
 import { NextRequest } from "next/server";
 import StatusCodes from "../_internal/shared/StatusCodes";
-import dbContext from "../_internal/shared/db/dbContext";
+import dbContext from "@repositories/dbContext";
 import handleServerError from "../_internal/shared/errors/handleServerError";
+import { SeriesFull } from "@features/series";
 
 export async function POST(request: NextRequest) {
   const series: SeriesFull = await request.json();

@@ -1,5 +1,5 @@
-import { SystemSeedData } from "@app/api/_internal/shared/db/seeding/data/seedSystems";
-import { System } from "@domain/models/system";
+import { System } from "@features/systems/";
+import { SystemSeedData } from "@repositories/seeding/data/seedSystems";
 
 export const mockSystemSeeds: SystemSeedData[] = [
   { name: "Dungeon Crawl Classics" },

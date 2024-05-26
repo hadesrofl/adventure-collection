@@ -1,9 +1,9 @@
 import IdParamProps from "@app/_shared/idParam";
 import StatusCodes from "@app/api/_internal/shared/StatusCodes";
-import dbContext from "@app/api/_internal/shared/db/dbContext";
+import dbContext from "@repositories/dbContext";
 import handleServerError from "@app/api/_internal/shared/errors/handleServerError";
-import { SeriesFull } from "@domain/models/series";
 import { NextRequest } from "next/server";
+import { SeriesFull } from "@features/series";
 
 export async function PUT(request: NextRequest) {
   const series: SeriesFull = await request.json();

@@ -6,7 +6,7 @@ import { GET, POST } from "./route";
 import { prismaMock } from "@tests/setup/prisma";
 import { ApiRequest, ApiResponse } from "@tests/mocks/fetch";
 import { mockFullSeries, mockSeries } from "@tests/mockData/mockSeries";
-import { seriesIncludes } from "@domain/models/series";
+import { seriesIncludes } from "@features/series";
 import { buildSeriesDbStatement } from "@tests/helpers/buildSeriesDbStatement";
 import StatusCodes from "../_internal/shared/StatusCodes";
 
