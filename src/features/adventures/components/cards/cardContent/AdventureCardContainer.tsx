@@ -8,6 +8,7 @@ import Image from "next/image";
 export default function AdventureCardContainer({
   adventure,
   showSummary: summaryComponent,
+  fitImageToCover,
 }: AdventureCardContentProps) {
   return (
     <>
@@ -17,7 +18,7 @@ export default function AdventureCardContainer({
           sx={{
             display: "flex",
             width: "auto",
-            height: "65vh",
+            height: "70vh",
             justifyContent: "center",
             position: "relative",
           }}
@@ -26,7 +27,7 @@ export default function AdventureCardContainer({
             src={adventure.image}
             alt=""
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: fitImageToCover ? "cover" : "contain" }}
           />
         </CardMedia>
       ) : (

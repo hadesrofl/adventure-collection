@@ -6,6 +6,8 @@ import { DictionaryContext } from "@dictionaries/helpers/dictionaryContext";
 import { AdventureCardCommonProps } from "./AdventureCardCommonProps";
 import { getSummaryParagraphs } from "../../../types/adventure";
 import { TestIds } from "@tests/testIds";
+import useIsMediumScreen from "@hooks/useIsMediumScreen";
+import useIsSmallScreen from "@hooks/useIsSmallScreen";
 
 export function createLevelRangeLabel(adventure: Adventure) {
   let levelRange = "";
@@ -19,6 +21,7 @@ export function createLevelRangeLabel(adventure: Adventure) {
 export interface AdventureCardContentProps extends AdventureCardCommonProps {
   showSummary?: boolean;
   href?: string;
+  fitImageToCover?: boolean;
 }
 
 function AdventureCardSummary({ adventure }: AdventureCardCommonProps) {
@@ -42,8 +45,17 @@ export function AdventureCardContent({
 }: AdventureCardContentProps) {
   const dictionary = useContext(DictionaryContext);
   const levelRange = createLevelRangeLabel(adventure);
+  const isMediumScreen = useIsMediumScreen();
+  const isSmallScreen = useIsSmallScreen();
+  const largerScreenMaxWidth = isMediumScreen ? "55vw" : "25vw";
+  const maxWidth = isSmallScreen ? "100vw" : largerScreenMaxWidth;
   return (
-    <Stack direction="column" spacing={2} alignItems="center" maxWidth="25vw">
+    <Stack
+      direction="column"
+      spacing={2}
+      alignItems="center"
+      maxWidth={maxWidth}
+    >
       <AdventureCardHeader adventure={adventure} />
       {showSummary && <AdventureCardSummary adventure={adventure} />}
       <Grid
