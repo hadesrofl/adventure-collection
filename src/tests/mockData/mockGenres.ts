@@ -1,5 +1,5 @@
-import { GenreSeedData } from "@app/api/_internal/shared/db/seeding/data/seedGenres";
-import { Genre } from "@domain/models/genre";
+import { GenreSeedData } from "@repositories/seeding/data/seedGenres";
+import { Genre } from "@features/genres";
 
 export const mockGenreSeeds: GenreSeedData[] = [
   {

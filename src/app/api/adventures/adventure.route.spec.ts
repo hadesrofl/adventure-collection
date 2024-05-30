@@ -6,10 +6,13 @@ import { GET, POST } from "./route";
 import StatusCodes from "../_internal/shared/StatusCodes";
 import { prismaMock } from "@tests/setup/prisma";
 import { ApiRequest, ApiResponse } from "@tests/mocks/fetch";
-import { mockAdventures } from "@tests/mockData/mockAdventures";
 import { createAdventureResponse } from "@tests/mocks/helper/createAdventureResponse";
-import { buildAdventure } from "@domain/factories/AdventureFactory";
-import { AdventureFull, adventureIncludes } from "@domain/models/adventure";
+import {
+  buildAdventure,
+  AdventureFull,
+  adventureIncludes,
+} from "@features/adventures";
+import { mockAdventures } from "@features/adventures";
 
 jest.mock("next/cache");
 

@@ -1,4 +1,4 @@
-import { Series, SeriesFull, isSeriesFull } from "@domain/models/series";
+import { Series, SeriesFull, isSeriesFull } from "@features/series";
 import { createAdventureResponse } from "./createAdventureResponse";
 
 export function createSeriesResponse(series: Series | SeriesFull) {

@@ -1,4 +1,4 @@
-import { Series, SeriesFull, seriesIncludes } from "@domain/models/series";
+import { Series, SeriesFull, seriesIncludes } from "@features/series";
 import { Adventure } from "@prisma/client";
 
 export function buildSeriesDbStatement(

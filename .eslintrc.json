@@ -1,3 +1,119 @@
 {
-  "extends": "next/core-web-vitals"
+  "plugins": ["boundaries"],
+  "extends": ["next/core-web-vitals", "plugin:boundaries/recommended"],
+  "settings": {
+    "boundaries/elements": [
+      {
+        "type": "app",
+        "pattern": "src/app/*"
+      },
+      {
+        "type": "components",
+        "pattern": "src/components/*"
+      },
+      {
+        "type": "dictionaries",
+        "pattern": "src/dictionaries/*"
+      },
+      {
+        "type": "domain",
+        "pattern": "src/domain/*"
+      },
+      {
+        "type": "features",
+        "pattern": "src/features/*",
+        "capture": ["module"]
+      },
+      {
+        "type": "hooks",
+        "pattern": "src/hooks/*"
+      },
+      {
+        "type": "repositories",
+        "pattern": "src/repositories/*"
+      },
+      {
+        "type": "routes",
+        "pattern": "src/routes/*"
+      },
+      {
+        "type": "tests",
+        "pattern": "src/tests/*"
+      },
+      {
+        "type": "utils",
+        "pattern": "src/utils/*"
+      }
+    ]
+  },
+  "rules": {
+    "boundaries/element-types": [
+      2,
+      {
+        // disallow all local imports by default
+        "default": "disallow",
+        "rules": [
+          {
+            "from": ["app"],
+            "allow": [
+              "app",
+              "domain",
+              "features",
+              "repositories",
+              "dictionaries",
+              "components",
+              "utils",
+              "tests"
+            ]
+          },
+          {
+            "from": ["features"],
+            "allow": [
+              "repositories",
+              "hooks",
+              "domain",
+              "dictionaries",
+              "components",
+              "features",
+              "utils",
+              "tests"
+            ]
+          },
+          {
+            "from": ["components"],
+            "allow": ["components", "dictionaries", "domain", "utils", "tests"]
+          },
+          {
+            "from": ["domain"],
+            "allow": ["dictionaries"]
+          },
+          {
+            "from": ["repositories"],
+            "allow": ["features", "domain", "utils", "tests"]
+          },
+          {
+            "from": ["tests"],
+            "allow": [
+              "tests",
+              "features",
+              "dictionaries",
+              "repositories",
+              "domain"
+            ]
+          }
+        ]
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": ["@features/*/*", "!@features/*/testExports"],
+            "message": "usage of internals in feature modules not allowed."
+          }
+        ]
+      }
+    ]
+  }
 }

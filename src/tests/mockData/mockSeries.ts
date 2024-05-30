@@ -1,7 +1,8 @@
-import { SeriesSeedData } from "@app/api/_internal/shared/db/seeding/data/seedSeries";
-import { Series, SeriesFull } from "@domain/models/series";
+import { SeriesSeedData } from "@repositories/seeding/data/seedSeries";
+import { Series, SeriesFull } from "@features/series";
 import { mockSystems } from "./mockSystems";
-import { mockAdventures } from "./mockAdventures";
+// TODO: Look into this. It should work via features/adventures
+import { mockAdventures } from "../../features/adventures/utils/mockAdventures";
 
 function createSeries(seed: SeriesSeedData, idx: number) {
   const system = getSystem(seed);

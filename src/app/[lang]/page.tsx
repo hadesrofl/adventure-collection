@@ -1,7 +1,9 @@
-import { loadAdventures } from "@app/api/_actions/adventures/loadAdventures";
-import { startSeeding } from "@app/api/_actions/seeding/startSeeding";
-import AdventureCardGallery from "@components/adventures/AdventureCardGallery";
-import NoAdventureDialog from "@components/adventures/dialogs/NoAdenture/NoAdventureDialog";
+import { startSeeding } from "@repositories/seeding/startSeeding";
+import {
+  AdventureCardGallery,
+  NoAdventureDialog,
+  loadAdventures,
+} from "@features/adventures";
 import { Box } from "@mui/material";
 
 export default async function AdventureCollectionPage() {

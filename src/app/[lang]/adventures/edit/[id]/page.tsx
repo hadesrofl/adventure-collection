@@ -1,6 +1,6 @@
 import IdParamProps from "@app/_shared/idParam";
-import dbContext from "@app/api/_internal/shared/db/dbContext";
-import AdventureForm from "@components/adventures/forms/AdventureForm";
+import dbContext from "@repositories/dbContext";
+import { AdventureForm } from "@features/adventures";
 
 export default async function AdventureEditPage({ params }: IdParamProps) {
   const adventure = await dbContext.adventures.getById(
@@ -11,11 +11,11 @@ export default async function AdventureEditPage({ params }: IdParamProps) {
   const systems = await dbContext.systems.list();
 
   return (
-      <AdventureForm
-        tagOptions={tags}
-        genreOptions={genres}
-        adventure={adventure}
-        systemOptions={systems}
-      />
+    <AdventureForm
+      tagOptions={tags}
+      genreOptions={genres}
+      adventure={adventure}
+      systemOptions={systems}
+    />
   );
 }

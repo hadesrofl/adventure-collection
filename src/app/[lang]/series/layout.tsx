@@ -2,7 +2,7 @@ import { CommonLayoutProps } from "../layout";
 import Stack from "@mui/material/Stack";
 import Card from "@mui/material/Card";
 import React from "react";
-import CenteredBox from "@components/lib/CenteredBox";
+import CenteredBox from "@components/CenteredBox";
 import { LangParam } from "@app/_shared/langParam";
 
 export default async function SeriesGalleryLayout({

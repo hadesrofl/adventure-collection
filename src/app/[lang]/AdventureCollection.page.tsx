@@ -1,7 +1,9 @@
 import { render } from "@testing-library/react";
 import AdventureCollectionPage from "./page";
-import { AdventureGalleryPageObject } from "@components/adventures/AdventureCardGallery.page";
-import { NoAdventureDialogPage } from "@components/adventures/dialogs/NoAdenture/NoAdventureDialog.page";
+import {
+  NoAdventureDialogPage,
+  AdventureGalleryPageObject,
+} from "@features/adventures/testExports";
 
 export class AdventureCollectionPageObject {
   private pageElement!: JSX.Element;

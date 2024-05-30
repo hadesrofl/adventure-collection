@@ -1,9 +1,9 @@
 import { NextRequest } from "next/server";
 import handleServerError from "../../_internal/shared/errors/handleServerError";
-import dbContext from "../../_internal/shared/db/dbContext";
+import dbContext from "@repositories/dbContext";
 import StatusCodes from "../../_internal/shared/StatusCodes";
 import IdParamProps from "@app/_shared/idParam";
-import { AdventureFull } from "@domain/models/adventure";
+import { AdventureFull } from "@features/adventures";
 
 export async function GET(_request: NextRequest, { params }: IdParamProps) {
   const { id } = params;

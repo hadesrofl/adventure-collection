@@ -1,6 +1,5 @@
 import IdParamProps from "@app/_shared/idParam";
-import { loadAdventure } from "@app/api/_actions/adventures/loadAdventures";
-import StaticCardCarousel from "@components/adventures/cards/carousel/StaticCardCarousel";
+import { loadAdventure, StaticCardCarousel } from "@features/adventures";
 
 export default async function AdventureDetailPage({
   params: { id },

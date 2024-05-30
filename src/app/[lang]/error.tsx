@@ -1,5 +1,5 @@
 "use client";
-import CenteredBox from "@components/lib/CenteredBox";
+import CenteredBox from "@components/CenteredBox";
 import { Button, Stack, Typography } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";

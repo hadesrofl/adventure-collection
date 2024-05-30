@@ -1,9 +1,9 @@
 import IdParamProps from "@app/_shared/idParam";
 import { render } from "@testing-library/react";
 import AdventureDetailPage from "./page";
-import { mockAdventures } from "@tests/mockData/mockAdventures";
-import { StaticCardCarouselPageObject } from "@components/adventures/cards/carousel/StaticCardCarousel.page";
 import { BasePage } from "@tests/pages/BasePage";
+import { mockAdventures } from "@features/adventures";
+import { StaticCardCarouselPageObject } from "@features/adventures/testExports";
 
 export class AdventureDetailPageObject extends BasePage<IdParamProps> {
   private carouselPage!: StaticCardCarouselPageObject;
