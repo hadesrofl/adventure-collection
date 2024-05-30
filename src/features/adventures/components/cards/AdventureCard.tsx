@@ -8,14 +8,17 @@ import { useState } from "react";
 import useIsSmallScreen from "@hooks/useIsSmallScreen";
 import Link from "next/link";
 import AdventureCardContainer from "./cardContent/AdventureCardContainer";
+import useIsMediumScreen from "@hooks/useIsMediumScreen";
 
 export default function AdventureCard({
   adventure,
   showSummary: summaryComponent,
   href,
+  fitImageToCover,
 }: AdventureCardContentProps) {
   const [open, setOpen] = useState<boolean>(false);
   const isSmallScreen = useIsSmallScreen();
+  const isMediumScreen = useIsMediumScreen();
 
   const handleCardClick = () => {
     setOpen(true);
@@ -29,26 +32,42 @@ export default function AdventureCard({
     <AdventureCardContainer
       adventure={adventure}
       showSummary={summaryComponent}
+      fitImageToCover={fitImageToCover || !summaryComponent}
     />
   );
+
+  function showCardContent() {
+    const cardContentShowSummary = adventureContainer;
+
+    const cardContentSmallScreen = (
+      <CardActionArea>
+        <Link
+          href={href ?? ""}
+          data-testid={TestIds.adventureCard.primaryAction}
+        >
+          {adventureContainer}
+        </Link>
+      </CardActionArea>
+    );
+
+    const cardContentLargeScreen = (
+      <CardActionArea onClick={handleCardClick}>
+        {adventureContainer}
+      </CardActionArea>
+    );
+
+    if (summaryComponent) return cardContentShowSummary;
+    else if (isSmallScreen && href) return cardContentSmallScreen;
+    else if (!isSmallScreen) return cardContentLargeScreen;
+  }
 
   return (
     <>
       <Card
         data-testid={TestIds.adventureCard.card(adventure.id)}
-        className="md:max-w-[600px] justify-between"
+        className="w-full md:min-w-[500px] md:max-w-[600px] justify-between"
       >
-        {isSmallScreen && href ? (
-          <CardActionArea>
-            <Link href={href} data-testid={TestIds.adventureCard.primaryAction}>
-              {adventureContainer}
-            </Link>
-          </CardActionArea>
-        ) : (
-          <CardActionArea onClick={handleCardClick}>
-            {adventureContainer}
-          </CardActionArea>
-        )}
+        {showCardContent()}
 
         <CardActions>
           <AdventureCardFooter adventure={adventure} />
@@ -56,8 +75,18 @@ export default function AdventureCard({
       </Card>
       {!isSmallScreen && (
         <Drawer open={open} onClose={handleClose} anchor="right">
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <AdventureCard adventure={adventure} showSummary />
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              minWidth: isMediumScreen ? "45vw" : "0vw",
+            }}
+          >
+            <AdventureCard
+              adventure={adventure}
+              showSummary
+              fitImageToCover={true}
+            />
           </Box>
         </Drawer>
       )}
