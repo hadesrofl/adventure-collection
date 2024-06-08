@@ -1,12 +1,4 @@
-import {
-  Typography,
-  Divider,
-  Chip,
-  Stack,
-  Badge,
-  Box,
-  Grid,
-} from "@mui/material";
+import { Typography, Divider, Chip, Stack, Box, Grid } from "@mui/material";
 import { AdventureCardCommonProps } from "./AdventureCardCommonProps";
 import { TestIds } from "@tests/testIds";
 

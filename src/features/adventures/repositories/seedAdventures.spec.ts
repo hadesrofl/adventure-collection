@@ -7,7 +7,10 @@ import { seedAdventures } from "./seedAdventures";
 import { mockSystems } from "@tests/mockData/mockSystems";
 import { mockSeries } from "@tests/mockData/mockSeries";
 import { AdventureSeedData } from "@repositories/seeding/AdventureSeedData";
-import { mockAdventureSeeds, mockAdventures } from "@tests/mockData/mockAdventures";
+import {
+  mockAdventureSeeds,
+  mockAdventures,
+} from "@tests/mockData/mockAdventures";
 
 function mockContentOfImportingFile() {
   fsReadFileSyncMock.mockReturnValueOnce(JSON.stringify(mockAdventureSeeds));
@@ -60,7 +63,7 @@ describe("Seed Adventures", () => {
 
     await seedAdventures(repository, mockSystems, mockGenres, mockSeries);
 
-    ["Seeding Adventures...", , "Adventures inserted: 0"].forEach((text) =>
+    ["Seeding Adventures...", "Adventures inserted: 0"].forEach((text) =>
       expect(logSpy).toHaveBeenCalledWith(text)
     );
     expect(prismaMock.adventure.create).toHaveBeenCalledTimes(0);
@@ -69,7 +72,6 @@ describe("Seed Adventures", () => {
 
   it("throws error when genre is not found", async () => {
     const adventureSeed = mockAdventureSeeds[0];
-    const oldGenres = adventureSeed.genres;
     const nonExistingGenre = "NotExistingGenre";
     adventureSeed.genres.push(nonExistingGenre);
     await checkErrorOnCreation(

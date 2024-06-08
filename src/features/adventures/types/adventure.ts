@@ -42,6 +42,8 @@ export const minifySummary = (adventure: Adventure, maxWords: number) => {
   return minifiedSummary;
 };
 
-export function isAdventureFull(adventure: any): adventure is AdventureFull {
+export function isAdventureFull(
+  adventure: unknown
+): adventure is AdventureFull {
   return (adventure as AdventureFull).system !== undefined;
 }

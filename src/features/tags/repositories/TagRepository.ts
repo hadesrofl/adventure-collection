@@ -8,6 +8,8 @@ export class TagRepository extends Repository<Tag> {
     super(client);
   }
 
+  // currently not implemented
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public async create(tag: Tag): Promise<Tag> {
     throw new Error("Method not implemented.");
   }
@@ -24,6 +26,8 @@ export class TagRepository extends Repository<Tag> {
     return await this.dbContext.tag.findMany({ where, skip, take: limit });
   });
 
+  // currently not implemented
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   getById = cache(async (id: number): Promise<Tag> => {
     throw new Error("Method not implemented.");
   });

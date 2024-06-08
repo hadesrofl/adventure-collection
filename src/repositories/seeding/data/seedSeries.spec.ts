@@ -84,7 +84,7 @@ describe("Seed Series", () => {
 
     await seedSeries(repository, mockSystems);
 
-    ["Seeding Series...", , "Series inserted: 0"].forEach((text) =>
+    ["Seeding Series...", "Series inserted: 0"].forEach((text) =>
       expect(logSpy).toHaveBeenCalledWith(text)
     );
     expect(prismaMock.series.create).toHaveBeenCalledTimes(0);

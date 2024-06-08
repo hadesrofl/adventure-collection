@@ -8,3 +8,4 @@ export { loadAdventures, loadAdventure } from "./repositories/loadAdventures";
 export { default as AdventureForm } from "./components/forms/AdventureForm";
 export { default as StaticCardCarousel } from "./components/cards/carousel/StaticCardCarousel";
 export { seedAdventures } from "./repositories/seedAdventures";
+export { removeRelationsFromAdventure } from "./utils/removeRelationsFromAdventure";

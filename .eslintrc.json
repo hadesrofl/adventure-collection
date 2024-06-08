@@ -1,6 +1,18 @@
 {
-  "plugins": ["boundaries"],
-  "extends": ["next/core-web-vitals", "plugin:boundaries/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["boundaries", "jest", "@typescript-eslint", "react"],
+  "extends": [
+    "eslint:recommended",
+    "next",
+    "next/core-web-vitals",
+    "plugin:boundaries/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "env": {
+    "jest/globals": true
+  },
   "settings": {
     "boundaries/elements": [
       {
@@ -118,6 +130,8 @@
           }
         ]
       }
-    ]
+    ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error"
   }
 }

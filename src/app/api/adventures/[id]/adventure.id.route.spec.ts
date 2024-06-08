@@ -11,16 +11,13 @@ import {
   buildAdventure,
   AdventureFull,
   adventureIncludes,
+  removeRelationsFromAdventure,
 } from "@features/adventures";
 import { createAdventureResponse } from "@tests/mocks/helper/createAdventureResponse";
 import { Genre } from "@features/genres";
 import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 jest.mock("next/cache");
-
-function removeRelationsFromAdventure(adventure: AdventureFull) {
-  return [adventure].map(({ id, system, series, ...rest }) => rest)[0];
-}
 
 describe("/adventures routes", () => {
   const defaultAdventure = mockAdventures[0];

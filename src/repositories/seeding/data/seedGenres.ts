@@ -45,7 +45,7 @@ async function findChildren(
   genre: GenreFull,
   seedRepository: Repository<GenreFull>
 ) {
-  let children: Genre[] = [];
+  const children: Genre[] = [];
   if (genre.children) {
     for (let j = 0; j < genre.children.length; j += 1) {
       const childrenInDb = await seedRepository.list({

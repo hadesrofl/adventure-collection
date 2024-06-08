@@ -103,7 +103,6 @@ describe("Add Series Dialog", () => {
 
   it("add button is disabled when no system is selected", async () => {
     // Arrange
-    const seriesName = "DCC Horror";
     const dictionary = await getDictionary(defaultLocale);
     const page = new AddSeriesDialogPage(dictionary);
     page.render(defaultPageProps);

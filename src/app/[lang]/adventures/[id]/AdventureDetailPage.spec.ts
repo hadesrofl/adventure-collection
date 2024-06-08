@@ -3,7 +3,7 @@ import { AdventureDetailPageObject } from "./AdventureDetailPage.page";
 import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 async function initPage(
-  id: Number,
+  id: number,
   previousCardHref: string | undefined = undefined,
   nextCardHref: string | undefined = undefined
 ) {

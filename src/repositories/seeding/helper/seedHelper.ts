@@ -21,10 +21,10 @@ export function readJsonFile<T>(path: string) {
   try {
     const fileContent = fs.readFileSync(path, "utf-8");
     jsonData = JSON.parse(fileContent);
+    return jsonData;
   } catch (e) {
     console.log(`Read file: ${path}`);
     console.log(e);
-  } finally {
     return jsonData;
   }
 }

@@ -63,7 +63,7 @@ describe("Seed Systems", () => {
 
     await seedSystems(repository);
 
-    ["Seeding Systems...", , "Systems inserted: 0"].forEach((text) =>
+    ["Seeding Systems...", "Systems inserted: 0"].forEach((text) =>
       expect(logSpy).toHaveBeenCalledWith(text)
     );
     expect(prismaMock.system.create).toHaveBeenCalledTimes(0);
