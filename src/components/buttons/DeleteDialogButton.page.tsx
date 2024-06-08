@@ -1,4 +1,4 @@
-import userEvent, { UserEvent } from "@testing-library/user-event";
+import { userEvent, UserEvent } from "@testing-library/user-event";
 import { DialogButtonBasePage } from "@tests/pages/DialogButton.base.page";
 
 export class DeleteDialogButtonPage extends DialogButtonBasePage {

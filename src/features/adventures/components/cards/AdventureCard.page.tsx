@@ -7,7 +7,7 @@ import {
   createLevelRangeLabel,
 } from "./cardContent/AdventureCardContent";
 import { BasePage } from "@tests/pages/BasePage";
-import userEvent, { UserEvent } from "@testing-library/user-event";
+import { userEvent, UserEvent } from "@testing-library/user-event";
 import { DeleteDialogButtonPage } from "@components/buttons/DeleteDialogButton.page";
 
 export class AdventureCardPageObject extends BasePage<AdventureCardContentProps> {

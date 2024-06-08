@@ -1,9 +1,8 @@
-import { SystemFull } from "@features/systems";
+import { SystemFull, SystemRepository } from "@features/systems";
 import {
   createIfNotExists,
   readJsonFile,
 } from "@repositories/seeding/helper/seedHelper";
-import { SystemRepository } from "@features/systems";
 
 export interface SystemSeedData {
   name: string;
