@@ -11,7 +11,6 @@ export interface AddSeriesDialogButtonProps extends IconButtonProps {
 }
 
 export default function AddSeriesDialogButton({
-  value,
   systems,
   ...props
 }: AddSeriesDialogButtonProps) {

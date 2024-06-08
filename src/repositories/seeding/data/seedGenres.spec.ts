@@ -60,7 +60,7 @@ describe("Seed Genres", () => {
 
     await seedGenres(repository);
 
-    ["Seeding Genres...", , "Genres inserted: 0"].forEach((text) =>
+    ["Seeding Genres...", "Genres inserted: 0"].forEach((text) =>
       expect(logSpy).toHaveBeenCalledWith(text)
     );
     expect(prismaMock.genre.create).toHaveBeenCalledTimes(0);

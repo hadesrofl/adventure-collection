@@ -6,7 +6,7 @@ export const genreIncludes = {
   parent: true,
 };
 
-export type Genre = Prisma.GenreGetPayload<{}>;
+export type Genre = Prisma.GenreGetPayload<object>;
 
 export type GenreFull = Prisma.GenreGetPayload<{
   include: { adventures: true; children: true; parent: true };

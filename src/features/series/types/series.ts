@@ -5,12 +5,12 @@ export const seriesIncludes = {
   system: true,
 };
 
-export type Series = Prisma.SeriesGetPayload<{}>;
+export type Series = Prisma.SeriesGetPayload<object>;
 
 export type SeriesFull = Prisma.SeriesGetPayload<{
   include: { adventures: true; system: true };
 }>;
 
-export function isSeriesFull(series: any): series is SeriesFull {
+export function isSeriesFull(series: unknown): series is SeriesFull {
   return (series as SeriesFull).system !== undefined;
 }

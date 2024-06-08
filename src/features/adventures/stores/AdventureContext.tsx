@@ -9,6 +9,8 @@ export const AdventureContext = createContext<{
   setAdventure: (adventure: AdventureFull) => void;
 }>({
   adventure: buildAdventureSkeleton(),
+  // default implementation
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   setAdventure: (adventure: AdventureFull) => {},
 });
 

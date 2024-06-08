@@ -87,7 +87,7 @@ export default function AutoCompleteWithLabels({
         onInputChange={onValueChange}
         options={options.filter((option) => texts.includes(option) === false)}
         filterSelectedOptions
-        getOptionLabel={(option: any) => {
+        getOptionLabel={(option) => {
           if (typeof option === "string") return option;
           return "";
         }}
@@ -97,7 +97,7 @@ export default function AutoCompleteWithLabels({
         autoSelect
         freeSolo
         size="small"
-        renderOption={(props, option: any) => (
+        renderOption={(props, option: string | { name: string }) => (
           <li {...props}>
             {typeof option === "string" ? option : option.name}
           </li>

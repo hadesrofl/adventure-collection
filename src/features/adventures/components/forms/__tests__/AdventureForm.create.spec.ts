@@ -131,7 +131,6 @@ describe("Adventure Form", () => {
       if (selectionList === null)
         throw new Error("Series selection list should be shown");
 
-      const options = within(selectionList).queryAllByRole("option");
       expect(within(selectionList).queryAllByRole("option").length).toBe(
         seriesOfSystem.length + 1 // "none" is a default option
       );

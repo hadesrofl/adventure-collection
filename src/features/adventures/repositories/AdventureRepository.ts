@@ -3,6 +3,7 @@ import { PrismaClient } from "@prisma/client";
 import getTagsToDelete from "../utils/getTagsToDelete";
 import { Repository } from "@repositories/BaseRepository";
 import { AdventureFull, adventureIncludes } from "../types/adventure";
+import { removeRelationsFromAdventure } from "../utils/removeRelationsFromAdventure";
 
 class AdventureRepository extends Repository<AdventureFull> {
   constructor(client: PrismaClient) {
@@ -36,13 +37,8 @@ class AdventureRepository extends Repository<AdventureFull> {
   }
 
   public async edit(adventure: AdventureFull) {
-    const {
-      adventureWithoutRelations,
-      tagsToDelete,
-      genresToDelete,
-      systemUpdate,
-      seriesUpdate,
-    } = await this.getUpdateData(adventure);
+    const { adventureWithoutRelations, tagsToDelete, genresToDelete } =
+      await this.getUpdateData(adventure);
 
     const updated = await this.dbContext.adventure.update({
       where: {
@@ -129,9 +125,7 @@ class AdventureRepository extends Repository<AdventureFull> {
         ? undefined
         : { connect: { id: adventure.systemId } };
 
-    const adventureWithoutRelations = [adventure].map(
-      ({ id, system, series, ...rest }) => rest
-    )[0];
+    const adventureWithoutRelations = removeRelationsFromAdventure(adventure);
     return {
       adventureWithoutRelations,
       tagsToDelete,

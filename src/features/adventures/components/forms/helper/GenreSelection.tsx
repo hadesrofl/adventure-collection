@@ -13,7 +13,7 @@ interface GenreSelectionProps {
 
 export default function GenreSelection({ genreOptions }: GenreSelectionProps) {
   const { adventure, setAdventure } = useContext(AdventureContext);
-  let genres: TreeNode<PrintableGenre>[] = genreOptions
+  const genres: TreeNode<PrintableGenre>[] = genreOptions
     .filter((genre) => genre.parentId === null)
     .map((genre) => createGenreSubtree(genre, genreOptions));
 

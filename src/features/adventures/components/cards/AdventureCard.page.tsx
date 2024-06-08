@@ -10,15 +10,6 @@ import { BasePage } from "@tests/pages/BasePage";
 import userEvent, { UserEvent } from "@testing-library/user-event";
 import { DeleteDialogButtonPage } from "@components/buttons/DeleteDialogButton.page";
 
-const traverseTree: (element: ChildNode) => HTMLElement | undefined = (
-  element: ChildNode
-) => {
-  if (element.nodeName.toLowerCase() === "img") return element as HTMLElement;
-  else if (!element.hasChildNodes() || element.firstChild === null)
-    return undefined;
-  return traverseTree(element.firstChild);
-};
-
 export class AdventureCardPageObject extends BasePage<AdventureCardContentProps> {
   private drawerSelector = ".MuiDrawer-paper";
   private tagSelector = ".MuiChip-root";
