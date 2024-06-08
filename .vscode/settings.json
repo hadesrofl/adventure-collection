@@ -1,5 +1,9 @@
 {
-    "coverage-gutters.coverageFileNames": [
-        "cobertura-coverage.xml"
-    ]
+  "coverage-gutters.coverageFileNames": ["cobertura-coverage.xml"],
+  "jest.outputConfig": {
+    "revealOn": "run",
+    "revealWithFocus": "test-results",
+    "clearOnRun": "both"
+  },
+  "jest.jestCommandLine": "npm run test --"
 }

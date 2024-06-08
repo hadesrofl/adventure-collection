@@ -10,9 +10,19 @@ import { BasePage } from "@tests/pages/BasePage";
 import userEvent, { UserEvent } from "@testing-library/user-event";
 import { DeleteDialogButtonPage } from "@components/buttons/DeleteDialogButton.page";
 
+const traverseTree: (element: ChildNode) => HTMLElement | undefined = (
+  element: ChildNode
+) => {
+  if (element.nodeName.toLowerCase() === "img") return element as HTMLElement;
+  else if (!element.hasChildNodes() || element.firstChild === null)
+    return undefined;
+  return traverseTree(element.firstChild);
+};
+
 export class AdventureCardPageObject extends BasePage<AdventureCardContentProps> {
   private drawerSelector = ".MuiDrawer-paper";
   private tagSelector = ".MuiChip-root";
+  private cardImageSelector = ".MuiCardMedia-root > img";
   private user: UserEvent;
   dialog: DeleteDialogButtonPage;
 
@@ -59,15 +69,21 @@ export class AdventureCardPageObject extends BasePage<AdventureCardContentProps>
     return within(card).queryByTestId(TestIds.adventureCard.primaryAction);
   }
 
+  private findImageElementOnScreen() {
+    if (!this.props.adventure.image) return null;
+    const imageSrcEncoded = encodeURIComponent(this.props.adventure.image);
+    const images = document.querySelectorAll(this.cardImageSelector);
+    let foundIdx = -1;
+    images.forEach((img, idx) => {
+      if (img?.getAttribute("src")?.includes(imageSrcEncoded)) foundIdx = idx;
+    });
+    return foundIdx === -1 ? null : (images[foundIdx] as HTMLElement);
+  }
+
   get image() {
-    if (this.props.adventure.image === null) return null;
     const card = this.cardOnPage;
     if (card === null) return null;
-    const imageSrcEncoded = encodeURIComponent(this.props.adventure.image);
-
-    const image = within(card).queryByRole("img");
-    if (image?.getAttribute("src")?.includes(imageSrcEncoded)) return image;
-    return null;
+    return this.findImageElementOnScreen();
   }
 
   get title() {
