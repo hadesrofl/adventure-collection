@@ -2,7 +2,7 @@ import { SeriesSeedData } from "@repositories/seeding/data/seedSeries";
 import { Series, SeriesFull } from "@features/series";
 import { mockSystems } from "./mockSystems";
 // TODO: Look into this. It should work via features/adventures
-import { mockAdventures } from "../../features/adventures/utils/mockAdventures";
+import { mockAdventures } from "./mockAdventures";
 
 function createSeries(seed: SeriesSeedData, idx: number) {
   const system = getSystem(seed);

@@ -1,7 +1,7 @@
 import AppRoutes from "@routes/appRoutes";
 import { prismaMock } from "@tests/setup/prisma";
-import { mockAdventures } from "@features/adventures";
 import { StaticCardCarouselPageObject } from "./StaticCardCarousel.page";
+import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 async function initPage(
   id: Number,

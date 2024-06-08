@@ -4,7 +4,7 @@ import { fsReadFileSyncMock } from "@tests/mocks/fs";
 import { logSpy } from "@tests/mocks/consoleLog";
 import { mockGenres, mockGenreSeeds } from "@tests/mockData/mockGenres";
 import { seedGenres } from "./seedGenres";
-import { AdventureRepository } from "@features/adventures";
+import { AdventureRepository } from "@features/adventures/repositoryExports";
 
 function mockContentOfImportingFile() {
   fsReadFileSyncMock.mockReturnValueOnce(JSON.stringify(mockGenreSeeds));

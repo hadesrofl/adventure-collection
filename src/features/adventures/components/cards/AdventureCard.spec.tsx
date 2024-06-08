@@ -5,7 +5,7 @@ import { waitFor } from "@testing-library/react";
 import { mockUseRouter } from "@tests/setup/nextNavigation";
 import useIsSmallScreen from "@hooks/useIsSmallScreen";
 import { adventureIncludes } from "../../types/adventure";
-import { mockAdventures } from "../../utils/mockAdventures";
+import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 jest.mock("../../../../hooks/useIsSmallScreen");
 

@@ -1,2 +1,5 @@
 export type { System, SystemFull } from "./types/system";
-export { SystemRepository } from "./repositories/systemRepository";
+export {
+  SystemRepository,
+  systemRepository,
+} from "./repositories/systemRepository";

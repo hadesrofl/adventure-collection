@@ -1,6 +1,6 @@
 export { default as AdventureCardGallery } from "./components/AdventureCardGallery";
 export { buildAdventure } from "./types/factories/AdventureFactory";
-export type { Adventure, AdventureFull } from "./types/adventure";
+export type { AdventureFull } from "./types/adventure";
 export { adventureIncludes, isAdventureFull } from "./types/adventure";
 export { default as NoAdventureDialog } from "./components/dialogs/NoAdenture/NoAdventureDialog";
 export { deleteAdventureById } from "./repositories/deleteAdventures";
@@ -8,5 +8,3 @@ export { loadAdventures, loadAdventure } from "./repositories/loadAdventures";
 export { default as AdventureForm } from "./components/forms/AdventureForm";
 export { default as StaticCardCarousel } from "./components/cards/carousel/StaticCardCarousel";
 export { seedAdventures } from "./repositories/seedAdventures";
-export { mockAdventureSeeds, mockAdventures } from "./utils/mockAdventures";
-export { default as AdventureRepository } from "./repositories/AdventureRepository";

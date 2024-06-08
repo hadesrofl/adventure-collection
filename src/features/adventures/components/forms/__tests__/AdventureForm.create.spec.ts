@@ -14,8 +14,8 @@ import ApiRoutes from "@routes/apiRoutes";
 import acceptAnythingForProperties from "@tests/helpers/acceptAnythingForProperties";
 import sortStrings from "@tests/helpers/sortStrings";
 import { AdventureFormFields } from "../helper/AdventureFormFields";
-import { mockAdventures } from "@features/adventures";
 import { createGenreSubtree } from "../../../utils/getSubgenres";
+import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 describe("Adventure Form", () => {
   const initPage = () => {

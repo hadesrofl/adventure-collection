@@ -1,14 +1,17 @@
 import IdParamProps from "@app/_shared/idParam";
-import dbContext from "@repositories/dbContext";
 import { AdventureForm } from "@features/adventures";
+import { tagRepository } from "@features/tags";
+import { genreRepository } from "@features/genres";
+import { systemRepository } from "@features/systems";
+import { adventureRepository } from "@features/adventures/repositoryExports";
 
 export default async function AdventureEditPage({ params }: IdParamProps) {
-  const adventure = await dbContext.adventures.getById(
+  const adventure = await adventureRepository.getById(
     Number.parseInt(params.id)
   );
-  const tags = await dbContext.tags.list();
-  const genres = await dbContext.genres.list();
-  const systems = await dbContext.systems.list();
+  const tags = await tagRepository.list();
+  const genres = await genreRepository.list();
+  const systems = await systemRepository.list();
 
   return (
     <AdventureForm

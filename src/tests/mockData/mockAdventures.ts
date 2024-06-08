@@ -3,8 +3,8 @@ import { mockGenres } from "@tests/mockData/mockGenres";
 import { mockTags } from "@tests/mockData/mockTags";
 import { System } from "@features/systems";
 import { Series } from "@features/series";
-import { AdventureSeedData } from "../repositories/seedAdventures";
-import { AdventureFull } from "../types/adventure";
+import { AdventureFull } from "@features/adventures";
+import { AdventureSeedData } from "@repositories/seeding/AdventureSeedData";
 
 function findEntries<T extends { name: string }>(
   names: string[],

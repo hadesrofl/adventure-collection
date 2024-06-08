@@ -4,7 +4,7 @@ import { logSpy } from "@tests/mocks/consoleLog";
 import { mockSystems } from "@tests/mockData/mockSystems";
 import { mockGenres } from "@tests/mockData/mockGenres";
 import { waitFor } from "@testing-library/react";
-import { mockAdventures } from "@features/adventures";
+import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 describe("Adventure Collection Page", () => {
   const beginSeedingLogMessage = "--- Begin Seeding ---";

@@ -13,7 +13,7 @@ import sortStrings from "@tests/helpers/sortStrings";
 import { mockFetch } from "@tests/mocks/fetch";
 import { AdventureFormFields } from "../helper/AdventureFormFields";
 import { AdventureFull } from "../../../types/adventure";
-import { mockAdventures } from "@features/adventures";
+import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 describe("Adventure Form", () => {
   const initPage = (adventure: AdventureFull) => {

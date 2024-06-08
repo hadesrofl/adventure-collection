@@ -109,7 +109,11 @@
       {
         "patterns": [
           {
-            "group": ["@features/*/*", "!@features/*/testExports"],
+            "group": [
+              "@features/*/*",
+              "!@features/*/testExports",
+              "!@features/*/repositoryExports"
+            ],
             "message": "usage of internals in feature modules not allowed."
           }
         ]

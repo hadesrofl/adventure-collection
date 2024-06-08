@@ -6,23 +6,9 @@ import {
   createIfNotExists,
   readJsonFile,
 } from "@repositories/seeding/helper/seedHelper";
-import { Languages } from "@domain/models/languages";
 import { AdventureFull } from "../types/adventure";
 import { buildAdventure } from "../types/factories/AdventureFactory";
-
-export interface AdventureSeedData {
-  name: string;
-  summary: string;
-  tags: string[];
-  system: string;
-  genres: string[];
-  language: Languages;
-  image?: string;
-  pageCount?: number;
-  minLevel?: number;
-  maxLevel?: number;
-  series?: string;
-}
+import { AdventureSeedData } from "@repositories/seeding/AdventureSeedData";
 
 function findSystem(name: string, systems: System[]) {
   const system = systems.find(

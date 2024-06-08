@@ -1,7 +1,7 @@
 "use server";
 
-import dbContext from "@repositories/dbContext";
+import { adventureRepository } from "../repositoryExports";
 
 export async function deleteAdventureById(id: number) {
-  return dbContext.adventures.deleteById(id);
+  return adventureRepository.deleteById(id);
 }

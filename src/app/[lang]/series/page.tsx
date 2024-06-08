@@ -1,15 +1,18 @@
-import { SeriesGallery, NoSeriesDialog } from "@features/series";
-import dbContext from "@repositories/dbContext";
+import {
+  SeriesGallery,
+  NoSeriesDialog,
+  seriesRepository,
+} from "@features/series";
 import { getDictionary } from "@dictionaries/helpers/getDictionaries";
 import { LangParam } from "@app/_shared/langParam";
-import { System } from "@features/systems";
+import { System, systemRepository } from "@features/systems";
 
 export default async function SeriesGalleryPage({ params }: LangParam) {
-  const series = await dbContext.series.list();
+  const series = await seriesRepository.list();
   const dictionary = await getDictionary(params.lang);
   const doSeriesExist = series.length > 0;
   let systems: System[] = [];
-  if (!doSeriesExist) systems = await dbContext.systems.list();
+  if (!doSeriesExist) systems = await systemRepository.list();
   return doSeriesExist ? (
     <SeriesGallery className="m-4" series={series} dictionary={dictionary} />
   ) : (
