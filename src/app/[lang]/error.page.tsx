@@ -2,7 +2,7 @@ import DictionaryProvider from "@dictionaries/helpers/dictionaryContext";
 import { Dictionary } from "@dictionaries/helpers/getDictionaries";
 import { render, screen } from "@testing-library/react";
 import ErrorPage from "./error";
-import userEvent, { UserEvent } from "@testing-library/user-event";
+import { userEvent, UserEvent } from "@testing-library/user-event";
 
 export class ErrorPageObject {
   private readonly error: Error;

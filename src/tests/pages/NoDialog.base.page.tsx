@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 import { Dictionary } from "@dictionaries/helpers/getDictionaries";
-import userEvent, { UserEvent } from "@testing-library/user-event";
+import { userEvent, UserEvent } from "@testing-library/user-event";
 import { default as defaultDictionary } from "@dictionaries/en.json";
 
 export abstract class NoDialogBasePage {

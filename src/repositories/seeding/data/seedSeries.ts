@@ -1,6 +1,5 @@
-import { SeriesFull } from "@features/series";
+import { SeriesFull, SeriesRepository } from "@features/series";
 import { createIfNotExists, readJsonFile } from "../helper/seedHelper";
-import { SeriesRepository } from "@features/series";
 import { System } from "@features/systems";
 
 export interface SeriesSeedData {

@@ -1,7 +1,7 @@
 import { Dictionary } from "@dictionaries/helpers/getDictionaries";
 import { System } from "@features/systems";
 import { render, screen } from "@testing-library/react";
-import userEvent, { UserEvent } from "@testing-library/user-event";
+import { userEvent, UserEvent } from "@testing-library/user-event";
 import AddSeriesDialogButton from "./AddSeriesDialogButton";
 import { AddSeriesDialogPage } from "../dialog/AddSeriesDialog/AddSeriesDialog.page";
 

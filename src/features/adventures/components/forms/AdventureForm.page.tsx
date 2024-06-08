@@ -1,6 +1,6 @@
 import { BasePage } from "@tests/pages/BasePage";
 import AdventureForm, { AdventureFormProps } from "./AdventureForm";
-import userEvent, { UserEvent } from "@testing-library/user-event";
+import { userEvent, UserEvent } from "@testing-library/user-event";
 import { render, screen, within } from "@testing-library/react";
 import { TestIds } from "@tests/testIds";
 import { AdventureFormFields } from "./helper/AdventureFormFields";

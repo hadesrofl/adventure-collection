@@ -1,5 +1,4 @@
 import { Dictionary } from "@dictionaries/helpers/getDictionaries";
-import userEvent, { UserEvent } from "@testing-library/user-event";
 import { default as defaultDictionary } from "@dictionaries/en.json";
 import SeriesButtonGroup from "./SeriesButtonGroup";
 import { render, screen, waitFor } from "@testing-library/react";
@@ -7,6 +6,7 @@ import { InputDialogButtonPage } from "@components/buttons/InputDialogButton.pag
 import { DeleteDialogButtonPage } from "@components/buttons/DeleteDialogButton.page";
 import { TestIds } from "@tests/testIds";
 import { Series } from "@features/series";
+import { userEvent, UserEvent } from "@testing-library/user-event";
 
 export class SeriesButtonGroupPage {
   private user: UserEvent;
