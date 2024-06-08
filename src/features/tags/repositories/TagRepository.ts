@@ -1,6 +1,7 @@
 import { PrismaClient, Tag } from "@prisma/client";
 import { cache } from "react";
 import { Repository } from "@repositories/BaseRepository";
+import prismaClient from "@repositories/prisma";
 
 export class TagRepository extends Repository<Tag> {
   constructor(client: PrismaClient) {
@@ -36,3 +37,5 @@ export class TagRepository extends Repository<Tag> {
     return deleted;
   }
 }
+
+export const tagRepository = new TagRepository(prismaClient);

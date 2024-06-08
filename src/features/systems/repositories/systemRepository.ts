@@ -4,6 +4,8 @@ import { cache } from "react";
 import { Repository } from "@repositories/BaseRepository";
 import { AdventureRepository } from "@features/adventures";
 import { findAdventuresToDisconnect } from "@utils/findLinkedAdventures";
+import prismaClient from "@repositories/prisma";
+import { adventureRepository } from "@features/adventures/adventureRepository";
 
 export class SystemRepository extends Repository<SystemFull> {
   private readonly adventureRepository: AdventureRepository;
@@ -86,3 +88,8 @@ export class SystemRepository extends Repository<SystemFull> {
     return deleted;
   }
 }
+
+export const systemRepository = new SystemRepository(
+  prismaClient,
+  adventureRepository
+);

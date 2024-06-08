@@ -6,9 +6,9 @@ import { TestIds } from "@tests/testIds";
 import SeriesButtonGroup from "../SeriesButtonGroup/SeriesButtonGroup";
 import { Stack, Typography } from "@mui/material";
 import AddSeriesDialogButton from "../AddSeriesDialogButton/AddSeriesDialogButton";
-import dbContext from "@repositories/dbContext";
 import { Dictionary } from "@dictionaries/helpers/getDictionaries";
 import { SeriesFull } from "../../types/series";
+import { systemRepository } from "@features/systems";
 
 interface SeriesGalleryProps extends CommonProps {
   series: SeriesFull[];
@@ -21,7 +21,7 @@ export default async function SeriesGallery({
   ...props
 }: SeriesGalleryProps) {
   const iconColumnClasses = "flex justify-end";
-  const systems = await dbContext.systems.list();
+  const systems = await systemRepository.list();
 
   return (
     <Stack {...props} spacing={2}>

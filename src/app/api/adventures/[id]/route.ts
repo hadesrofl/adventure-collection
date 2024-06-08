@@ -1,14 +1,14 @@
 import { NextRequest } from "next/server";
 import handleServerError from "../../_internal/shared/errors/handleServerError";
-import dbContext from "@repositories/dbContext";
 import StatusCodes from "../../_internal/shared/StatusCodes";
 import IdParamProps from "@app/_shared/idParam";
 import { AdventureFull } from "@features/adventures";
+import { adventureRepository } from "@features/adventures/adventureRepository";
 
 export async function GET(_request: NextRequest, { params }: IdParamProps) {
   const { id } = params;
   try {
-    const adventure = await dbContext.adventures.getById(Number.parseInt(id));
+    const adventure = await adventureRepository.getById(Number.parseInt(id));
     return Response.json(adventure, { status: StatusCodes.OK });
   } catch (error) {
     return handleServerError(error);
@@ -18,7 +18,7 @@ export async function GET(_request: NextRequest, { params }: IdParamProps) {
 export async function PUT(request: NextRequest) {
   const adventure: AdventureFull = await request.json();
   try {
-    await dbContext.adventures.edit(adventure);
+    await adventureRepository.edit(adventure);
     return new Response(undefined, { status: StatusCodes.NoContent });
   } catch (error) {
     return handleServerError(error);
@@ -28,7 +28,7 @@ export async function PUT(request: NextRequest) {
 export async function DELETE(_request: NextRequest, { params }: IdParamProps) {
   const { id } = params;
   try {
-    await dbContext.adventures.deleteById(Number.parseInt(id));
+    await adventureRepository.deleteById(Number.parseInt(id));
     return new Response(undefined, { status: StatusCodes.NoContent });
   } catch (error) {
     return handleServerError(error);

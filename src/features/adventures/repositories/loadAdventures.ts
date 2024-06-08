@@ -1,14 +1,14 @@
 "use server";
-import dbContext from "@repositories/dbContext";
+import { adventureRepository } from "../adventureRepository";
 
 export async function loadAdventures(
   where?: object,
   skip?: number,
   limit?: number
 ) {
-  return dbContext.adventures.list(where, skip, limit);
+  return adventureRepository.list(where, skip, limit);
 }
 
 export async function loadAdventure(id: number) {
-  return dbContext.adventures.getById(id);
+  return adventureRepository.getById(id);
 }

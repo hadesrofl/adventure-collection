@@ -4,6 +4,8 @@ import { Repository } from "@repositories/BaseRepository";
 import { SeriesFull, seriesIncludes } from "../types/series";
 import { AdventureRepository } from "@features/adventures";
 import { findAdventuresToDisconnect } from "@utils/findLinkedAdventures";
+import prismaClient from "@repositories/prisma";
+import { adventureRepository } from "@features/adventures/adventureRepository";
 
 class SeriesRepository extends Repository<SeriesFull> {
   private readonly adventureRepository: AdventureRepository;
@@ -92,5 +94,10 @@ class SeriesRepository extends Repository<SeriesFull> {
     return deleted;
   }
 }
+
+export const seriesRepository = new SeriesRepository(
+  prismaClient,
+  adventureRepository
+);
 
 export default SeriesRepository;

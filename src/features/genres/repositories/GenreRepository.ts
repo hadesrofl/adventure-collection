@@ -4,6 +4,8 @@ import { Repository } from "@repositories/BaseRepository";
 import { GenreFull, genreIncludes } from "@features/genres";
 import { AdventureRepository } from "@features/adventures";
 import { findAdventuresToDisconnect } from "@utils/findLinkedAdventures";
+import prismaClient from "@repositories/prisma";
+import { adventureRepository } from "@features/adventures/adventureRepository";
 
 class GenreRepository extends Repository<GenreFull> {
   private readonly adventureRepository: AdventureRepository;
@@ -115,4 +117,8 @@ class GenreRepository extends Repository<GenreFull> {
   }
 }
 
+export const genreRepository = new GenreRepository(
+  prismaClient,
+  adventureRepository
+);
 export default GenreRepository;
