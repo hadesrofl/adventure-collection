@@ -3,7 +3,7 @@ import { AdventureForm } from "@features/adventures";
 import { tagRepository } from "@features/tags";
 import { genreRepository } from "@features/genres";
 import { systemRepository } from "@features/systems";
-import { adventureRepository } from "@features/adventures/adventureRepository";
+import { adventureRepository } from "@features/adventures/repositoryExports";
 
 export default async function AdventureEditPage({ params }: IdParamProps) {
   const adventure = await adventureRepository.getById(

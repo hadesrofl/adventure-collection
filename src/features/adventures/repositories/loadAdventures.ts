@@ -1,5 +1,5 @@
 "use server";
-import { adventureRepository } from "../adventureRepository";
+import { adventureRepository } from "../repositoryExports";
 
 export async function loadAdventures(
   where?: object,

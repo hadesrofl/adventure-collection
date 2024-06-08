@@ -9,7 +9,7 @@ import { ApiRequest, ApiResponse } from "@tests/mocks/fetch";
 import { mockFullSeries, mockSeries } from "@tests/mockData/mockSeries";
 import { seriesIncludes } from "@features/series";
 import { buildSeriesDbStatement } from "@tests/helpers/buildSeriesDbStatement";
-import { mockAdventures } from "@features/adventures";
+import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 jest.mock("next/cache");
 

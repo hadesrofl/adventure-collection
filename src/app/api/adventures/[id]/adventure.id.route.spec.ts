@@ -14,7 +14,7 @@ import {
 } from "@features/adventures";
 import { createAdventureResponse } from "@tests/mocks/helper/createAdventureResponse";
 import { Genre } from "@features/genres";
-import { mockAdventures } from "@features/adventures";
+import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 jest.mock("next/cache");
 

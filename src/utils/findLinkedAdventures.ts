@@ -1,5 +1,5 @@
-import { Adventure } from "@features/adventures";
-import { AdventureRepository } from "@features/adventures";
+import { Adventure } from "@domain/models/adventure";
+import { AdventureRepository } from "@features/adventures/repositoryExports";
 
 export async function findLinkedAdventures(
   repository: AdventureRepository,

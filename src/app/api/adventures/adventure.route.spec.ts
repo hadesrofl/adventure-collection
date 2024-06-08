@@ -12,7 +12,7 @@ import {
   AdventureFull,
   adventureIncludes,
 } from "@features/adventures";
-import { mockAdventures } from "@features/adventures";
+import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 jest.mock("next/cache");
 

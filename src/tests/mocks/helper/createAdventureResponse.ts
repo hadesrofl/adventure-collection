@@ -1,8 +1,5 @@
-import {
-  Adventure,
-  AdventureFull,
-  isAdventureFull,
-} from "@features/adventures";
+import { Adventure } from "@domain/models/adventure";
+import { AdventureFull, isAdventureFull } from "@features/adventures";
 
 export function createAdventureResponse(adventure: Adventure | AdventureFull) {
   if (isAdventureFull(adventure)) {

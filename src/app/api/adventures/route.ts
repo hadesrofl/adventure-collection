@@ -2,7 +2,7 @@ import { NextRequest } from "next/server";
 import handleServerError from "../_internal/shared/errors/handleServerError";
 import StatusCodes from "../_internal/shared/StatusCodes";
 import { AdventureFull } from "@features/adventures";
-import { adventureRepository } from "@features/adventures/adventureRepository";
+import { adventureRepository } from "@features/adventures/repositoryExports";
 
 export async function POST(request: NextRequest) {
   const adventure: AdventureFull = await request.json();

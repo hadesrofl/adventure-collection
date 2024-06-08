@@ -7,7 +7,7 @@ import { seedSystems } from "@repositories/seeding/data/seedSystems";
 import { systemRepository } from "@features/systems";
 import { genreRepository } from "@features/genres";
 import { seriesRepository } from "@features/series";
-import { adventureRepository } from "@features/adventures/adventureRepository";
+import { adventureRepository } from "@features/adventures/repositoryExports";
 
 export async function startSeeding() {
   if (process.env.DATABASE_SEED_DATA !== "true") return;

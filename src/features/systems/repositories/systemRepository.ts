@@ -2,10 +2,12 @@ import { SystemFull, systemIncludes } from "../types/system";
 import { PrismaClient } from "@prisma/client";
 import { cache } from "react";
 import { Repository } from "@repositories/BaseRepository";
-import { AdventureRepository } from "@features/adventures";
 import { findAdventuresToDisconnect } from "@utils/findLinkedAdventures";
 import prismaClient from "@repositories/prisma";
-import { adventureRepository } from "@features/adventures/adventureRepository";
+import {
+  AdventureRepository,
+  adventureRepository,
+} from "@features/adventures/repositoryExports";
 
 export class SystemRepository extends Repository<SystemFull> {
   private readonly adventureRepository: AdventureRepository;

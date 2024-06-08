@@ -2,7 +2,7 @@ import { AdventureGalleryPageObject } from "./AdventureCardGallery.page";
 import { AdventureCardPageObject } from "./cards/AdventureCard.page";
 import AppRoutes from "@routes/appRoutes";
 import useIsSmallScreen from "@hooks/useIsSmallScreen";
-import { mockAdventures } from "@features/adventures";
+import { mockAdventures } from "@tests/mockData/mockAdventures";
 
 jest.mock("../../../hooks/useIsSmallScreen");
 

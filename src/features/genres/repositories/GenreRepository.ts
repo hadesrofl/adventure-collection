@@ -1,11 +1,13 @@
 import { cache } from "react";
 import { PrismaClient } from "@prisma/client";
 import { Repository } from "@repositories/BaseRepository";
-import { GenreFull, genreIncludes } from "@features/genres";
-import { AdventureRepository } from "@features/adventures";
+import { GenreFull, genreIncludes } from "../types/genre";
 import { findAdventuresToDisconnect } from "@utils/findLinkedAdventures";
 import prismaClient from "@repositories/prisma";
-import { adventureRepository } from "@features/adventures/adventureRepository";
+import {
+  AdventureRepository,
+  adventureRepository,
+} from "@features/adventures/repositoryExports";
 
 class GenreRepository extends Repository<GenreFull> {
   private readonly adventureRepository: AdventureRepository;

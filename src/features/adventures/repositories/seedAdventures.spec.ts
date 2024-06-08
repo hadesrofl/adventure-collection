@@ -3,10 +3,11 @@ import { prismaMock } from "@tests/setup/prisma";
 import { fsReadFileSyncMock } from "@tests/mocks/fs";
 import { logSpy } from "@tests/mocks/consoleLog";
 import { mockGenres } from "@tests/mockData/mockGenres";
-import { AdventureSeedData, seedAdventures } from "./seedAdventures";
+import { seedAdventures } from "./seedAdventures";
 import { mockSystems } from "@tests/mockData/mockSystems";
 import { mockSeries } from "@tests/mockData/mockSeries";
-import { mockAdventureSeeds, mockAdventures } from "@features/adventures";
+import { AdventureSeedData } from "@repositories/seeding/AdventureSeedData";
+import { mockAdventureSeeds, mockAdventures } from "@tests/mockData/mockAdventures";
 
 function mockContentOfImportingFile() {
   fsReadFileSyncMock.mockReturnValueOnce(JSON.stringify(mockAdventureSeeds));

@@ -112,7 +112,7 @@
             "group": [
               "@features/*/*",
               "!@features/*/testExports",
-              "!@features/adventures/adventureRepository"
+              "!@features/*/repositoryExports"
             ],
             "message": "usage of internals in feature modules not allowed."
           }

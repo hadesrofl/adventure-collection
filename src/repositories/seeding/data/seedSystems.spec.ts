@@ -4,7 +4,7 @@ import { prismaMock } from "@tests/setup/prisma";
 import { fsReadFileSyncMock } from "@tests/mocks/fs";
 import { seedSystems } from "./seedSystems";
 import { logSpy } from "@tests/mocks/consoleLog";
-import { AdventureRepository } from "@features/adventures";
+import { AdventureRepository } from "@features/adventures/repositoryExports";
 
 function mockContentOfImportingFile() {
   fsReadFileSyncMock.mockReturnValueOnce(JSON.stringify(mockSystemSeeds));

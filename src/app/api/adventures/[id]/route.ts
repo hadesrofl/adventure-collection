@@ -3,7 +3,7 @@ import handleServerError from "../../_internal/shared/errors/handleServerError";
 import StatusCodes from "../../_internal/shared/StatusCodes";
 import IdParamProps from "@app/_shared/idParam";
 import { AdventureFull } from "@features/adventures";
-import { adventureRepository } from "@features/adventures/adventureRepository";
+import { adventureRepository } from "@features/adventures/repositoryExports";
 
 export async function GET(_request: NextRequest, { params }: IdParamProps) {
   const { id } = params;
