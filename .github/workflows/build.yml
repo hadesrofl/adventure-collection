@@ -56,6 +56,8 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
           cache-dependency-path: "package-lock.json"
+      - name: Check circular references
+        run: npm install -g madge && madge -c src/**/* --ts-config tsconfig.json
       - run: npm ci
       - run: npm run db:schema:build
       - run: npm run db:client:generate
