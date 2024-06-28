@@ -8,7 +8,7 @@ model Adventure {
     id            Int      @id @default(autoincrement())
     createdAt     DateTime @default(now())
     updatedAt     DateTime @default(now())
-    system        System   @relation(fields: [systemId], references: [id], onUpdate: Cascade)
+    system        System   @relation(fields: [systemId], references: [id], onUpdate: Cascade, onDelete: Cascade)
     systemId      Int
     name          String
     summary       String

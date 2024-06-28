@@ -46,4 +46,16 @@ export const TestIds = {
     deleteDialogButton: (name: string) =>
       `series-button-group-delete-dialog-button-${name}`,
   },
+  systemGallery: {
+    entry: (name: string) => `system-gallery-entry-${name}`,
+    adventureCount: (name: string) => `system-gallery-adventures-${name}`,
+    addButton: "system-gallery-add-button",
+  },
+  systemButtonGroup: {
+    root: (name: string) => `system-button-group-${name}`,
+    inputDialogButton: (name: string) =>
+      `system-button-group-input-dialog-button-${name}`,
+    deleteDialogButton: (name: string) =>
+      `system-button-group-delete-dialog-button-${name}`,
+  },
 };

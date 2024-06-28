@@ -88,6 +88,50 @@
       "yes": "Create"
     }
   },
+  "AddSystemDialogButton": {
+    "labels": {
+      "system": "System"
+    },
+    "titleText": "Add System",
+    "contentText": "Please enter the name for the system:",
+    "cancelButton": "Cancel",
+    "okButton": "Add"
+  },
+  "SystemGallery": {
+    "title": "Manage Systems",
+    "headers": {
+      "system": "System",
+      "actions": "Actions",
+      "adventureCount": "Adventures"
+    }
+  },
+  "SystemButtonGroup": {
+    "deleteDialog": {
+      "title": "Delete System",
+      "contextText": "Deleting a system will also delete its related series and adventures.\n\nAre you sure, you want to delete the system:",
+      "buttons": {
+        "cancelLabel": "Cancel",
+        "okLabel": "Delete"
+      }
+    },
+    "editDialog": {
+      "title": "Edit System",
+      "label": "System",
+      "contextText": "Please enter the new name for the system:",
+      "buttons": {
+        "cancelLabel": "Cancel",
+        "okLabel": "Save"
+      }
+    }
+  },
+  "NoSystemsDialog": {
+    "title": "Create a new System?",
+    "contextText": "It seems there are no systems.",
+    "buttons": {
+      "no": "Stay",
+      "yes": "Create"
+    }
+  },
   "Errors": {
     "pages": {
       "generic": {

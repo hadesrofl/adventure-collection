@@ -45,35 +45,35 @@
   },
   "AddSeriesDialogButton": {
     "labels": {
-      "series": "Serie"
+      "series": "Reihe"
     },
     "systemPlaceholder": "Bitte wähle ein System",
-    "titleText": "Serie hinzufügen",
-    "contentText": "Wähle bitte ein System und gib den Namen der Serie ein:",
+    "titleText": "Reihe hinzufügen",
+    "contentText": "Wähle bitte ein System und gib den Namen der Reihe ein:",
     "cancelButton": "Abbrechen",
     "okButton": "Hinzufügen"
   },
   "SeriesGallery": {
-    "title": "Serien verwalten",
+    "title": "Reihen verwalten",
     "headers": {
       "system": "System",
-      "series": "Serie",
+      "series": "Reihe",
       "actions": "Aktionen"
     }
   },
   "SeriesButtonGroup": {
     "deleteDialog": {
-      "title": "Serie löschen",
-      "contextText": "Bist du sicher, dass die folgende Serie gelöscht werden soll:",
+      "title": "Reihe löschen",
+      "contextText": "Bist du sicher, dass die folgende Reihe gelöscht werden soll:",
       "buttons": {
         "cancelLabel": "Abbrechen",
         "okLabel": "Löschen"
       }
     },
     "editDialog": {
-      "title": "Serie bearbeiten",
-      "label": "Serie",
-      "contextText": "Bitte trage den neuen Namen für die Serie ein:",
+      "title": "Reihe bearbeiten",
+      "label": "Reihe",
+      "contextText": "Bitte trage den neuen Namen für die Reihe ein:",
       "buttons": {
         "cancelLabel": "Abbrechen",
         "okLabel": "Speichern"
@@ -81,8 +81,52 @@
     }
   },
   "NoSeriesDialog": {
-    "title": "Ein neue Serie erstellen?",
-    "contextText": "Es scheint, dass keine Serien existieren.",
+    "title": "Ein neue Reihe erstellen?",
+    "contextText": "Es scheint, dass keine Reihen existieren.",
+    "buttons": {
+      "no": "Auf der Seite bleiben",
+      "yes": "Erstellen"
+    }
+  },
+  "AddSystemDialogButton": {
+    "labels": {
+      "system": "System"
+    },
+    "titleText": "System hinzufügen",
+    "contentText": "Bitte trage den neuen Namen für die System ein:",
+    "cancelButton": "Abbrechen",
+    "okButton": "Speichern"
+  },
+  "SystemGallery": {
+    "title": "Systeme verwalten",
+    "headers": {
+      "system": "Systeme",
+      "actions": "Aktionen",
+      "adventureCount": "Abenteuer"
+    }
+  },
+  "SystemButtonGroup": {
+    "deleteDialog": {
+      "title": "System löschen",
+      "contextText": "Das Löschen eines Systems löscht auch die zugehörigen Reihen und Abenteuer.\n\nBist du sicher, dass das folgende System gelöscht werden soll:",
+      "buttons": {
+        "cancelLabel": "Abbrechen",
+        "okLabel": "Löschen"
+      }
+    },
+    "editDialog": {
+      "title": "System bearbeiten",
+      "label": "System",
+      "contextText": "Bitte trage den neuen Namen für das System ein:",
+      "buttons": {
+        "cancelLabel": "Abbrechen",
+        "okLabel": "Speichern"
+      }
+    }
+  },
+  "NoSystemsDialog": {
+    "title": "Ein neues System erstellen?",
+    "contextText": "Es scheint, dass keine Systeme existieren.",
     "buttons": {
       "no": "Auf der Seite bleiben",
       "yes": "Erstellen"
