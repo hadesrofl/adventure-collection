@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react";
+import { getDefaultNormalizer, screen } from "@testing-library/react";
 
 export class DialogButtonBasePage {
   protected title: string;
@@ -23,7 +23,12 @@ export class DialogButtonBasePage {
   }
 
   get contentText() {
-    return screen.getByText(this.text);
+    return screen.getByText(this.text, {
+      normalizer: getDefaultNormalizer({
+        trim: false,
+        collapseWhitespace: false,
+      }),
+    });
   }
 
   get cancelButton() {

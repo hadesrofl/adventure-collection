@@ -10,6 +10,12 @@ import {
   getSeries,
   deleteSeries,
 } from "./seriesRoutes";
+import {
+  createSystem,
+  editSystem,
+  getSystem,
+  deleteSystem,
+} from "./systemRoutes";
 
 const ApiRoutes = {
   adventures: {
@@ -23,6 +29,12 @@ const ApiRoutes = {
     editSeries,
     getSeries,
     deleteSeries,
+  },
+  systems: {
+    createSystem,
+    editSystem,
+    getSystem,
+    deleteSystem,
   },
 };
 

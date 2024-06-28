@@ -22,11 +22,7 @@ export class SystemRepository extends Repository<SystemFull> {
         ...system,
         id: undefined,
         adventures: {
-          connect: system.adventures.map((adventure) => {
-            return {
-              id: adventure.id,
-            };
-          }),
+          connect: system.adventures,
         },
       },
       include: systemIncludes,
@@ -35,6 +31,12 @@ export class SystemRepository extends Repository<SystemFull> {
   }
 
   public async edit(system: SystemFull) {
+    const oldSystem = await this.getById(system.id);
+    const newAdventures = system.adventures.filter((adventure) => {
+      if (oldSystem.adventures.find((adv) => adv.id === adventure.id))
+        return false;
+      return true;
+    });
     const adventuresToDisconnect = await findAdventuresToDisconnect(
       this.adventureRepository,
       { systemId: system.id },
@@ -48,12 +50,10 @@ export class SystemRepository extends Repository<SystemFull> {
       data: {
         ...system,
         adventures: {
-          connect: system.adventures.map((adventure) => {
-            return {
-              id: adventure.id,
-            };
-          }),
-          disconnect: adventuresToDisconnect,
+          connect: newAdventures.length ? newAdventures : undefined,
+          disconnect: adventuresToDisconnect.length
+            ? adventuresToDisconnect
+            : undefined,
         },
       },
       include: systemIncludes,

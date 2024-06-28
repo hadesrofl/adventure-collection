@@ -6,6 +6,6 @@ model Series {
     name       String
     createdAt  DateTime    @default(now())
     adventures Adventure[] @relation("linkedAdventures")
-    system     System      @relation("linkedSystems", fields: [systemId], references: [id])
+    system     System      @relation("linkedSystems", fields: [systemId], references: [id], onDelete: Cascade, onUpdate: Cascade)
     systemId   Int
 }
