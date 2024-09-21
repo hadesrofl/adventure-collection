@@ -30,7 +30,8 @@
 				"fabiospampinato.vscode-todo-plus",
 				"ajmnz.prisma-import",
 				"ryanluker.vscode-coverage-gutters",
-				"Orta.vscode-jest"
+				"Orta.vscode-jest",
+				"anseki.vscode-color"
 			],
 			"settings": {
 			    "sqltools.connections": [

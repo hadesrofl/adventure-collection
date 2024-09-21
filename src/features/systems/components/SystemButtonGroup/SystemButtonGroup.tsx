@@ -80,8 +80,9 @@ export default function SystemButtonGroup({ system }: SystemButtonGroupProps) {
   return (
     <Stack
       direction="row"
-      spacing={2}
+      spacing={1}
       data-testid={TestIds.systemButtonGroup.root(system.name)}
+      justifyContent="end"
     >
       <InputDialogButton
         data-testid={TestIds.systemButtonGroup.inputDialogButton(system.name)}

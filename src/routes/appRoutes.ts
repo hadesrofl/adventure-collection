@@ -3,7 +3,7 @@ const adventureRoot = "/adventures";
 
 const adventureShowRoute = (id: number) => `${adventureRoot}/${id}`;
 const adventureRoutes = {
-  collection: appRoot,
+  collection: adventureRoot,
   show: adventureShowRoute,
   create: `${adventureRoot}/create`,
   edit: (id: number) => `${adventureRoot}/edit/${id}`,

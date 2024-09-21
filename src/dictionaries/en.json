@@ -1,4 +1,16 @@
 {
+  "Navigation": {
+    "adventures": "Adventures",
+    "series": "Series",
+    "systems": "Systems"
+  },
+  "PageTitles": {
+    "CreateAdventure": "Create Adventure",
+    "EditAdventure": "Edit",
+    "AdventureGallery": "Adventure Gallery",
+    "SystemGallery": "Systems",
+    "SeriesGallery": "Series"
+  },
   "AdventureForm": {
     "labels": {
       "title": "Title",
@@ -156,6 +168,7 @@
     "English": "English"
   },
   "Models": {
+    "adventure": "adventure",
     "adventures": {
       "name": "Title",
       "summary": "Summary",

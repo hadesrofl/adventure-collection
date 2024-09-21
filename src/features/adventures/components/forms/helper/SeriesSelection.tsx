@@ -7,9 +7,7 @@ import { TestIds } from "@tests/testIds";
 import { useContext, ChangeEvent, useEffect, useState } from "react";
 import ErrorProps from "./ErrorProps";
 
-interface SeriesSelectionProps extends ErrorProps {}
-
-export default function SeriesSelection({ errors }: SeriesSelectionProps) {
+export default function SeriesSelection({ errors }: ErrorProps) {
   const { adventure, setAdventure } = useContext(AdventureContext);
   const dictionary = useContext(DictionaryContext);
   const [series, setSeries] = useState<Series[]>([]);
