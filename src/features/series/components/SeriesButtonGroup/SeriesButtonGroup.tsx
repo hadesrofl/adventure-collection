@@ -80,8 +80,9 @@ export default function SeriesButtonGroup({ series }: SeriesButtonGroupProps) {
   return (
     <Stack
       direction="row"
-      spacing={2}
+      spacing={1}
       data-testid={TestIds.seriesButtonGroup.root(series.name)}
+      justifyContent="end"
     >
       <InputDialogButton
         data-testid={TestIds.seriesButtonGroup.inputDialogButton(series.name)}

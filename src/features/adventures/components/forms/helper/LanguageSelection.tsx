@@ -6,13 +6,11 @@ import { TestIds } from "@tests/testIds";
 import { useContext, ChangeEvent } from "react";
 import ErrorProps from "./ErrorProps";
 
-interface LanguageSelectionProps extends ErrorProps {}
-
 function isLanguage(value: string): value is Language {
   return Object.keys(Language).includes(value);
 }
 
-export default function LanguageSelection({ errors }: LanguageSelectionProps) {
+export default function LanguageSelection({ errors }: ErrorProps) {
   const { adventure, setAdventure } = useContext(AdventureContext);
   const dictionary = useContext(DictionaryContext);
 

@@ -1,30 +1,50 @@
 "use client";
 import { ThemeOptions, createTheme } from "@mui/material/styles";
 
-export const lightTheme: ThemeOptions = createTheme({
+const lightTheme: ThemeOptions = createTheme({
   palette: {
     mode: "light",
     primary: {
-      main: "#80CBC4",
+      main: "#008080",
+      light: "#009D9D",
+      dark: "#006262",
     },
     secondary: {
-      main: "#CC9981",
+      main: "#4c73a3",
+      light: "#5A88C0",
+      dark: "#3F5F86",
     },
-    background: {
-      paper: "#ffffff",
-      default: "#FFF6F4",
+    info: {
+      main: "#104040",
+      light: "#175D5D",
+      dark: "#092323",
     },
   },
 });
 
-export const darkTheme: ThemeOptions = createTheme({
+const darkTheme: ThemeOptions = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#1976d2",
+      main: "#00BABA",
+      light: "#00D7D7",
+      dark: "#009D9D",
     },
     secondary: {
-      main: "#9c27b0",
+      main: "#7792b4",
+      light: "#8BABD2",
+      dark: "#647C98",
+    },
+    info: {
+      main: "#1F7A7A",
+      light: "#269898",
+      dark: "#175D5D",
     },
   },
+});
+
+export const appTheme = createTheme({
+  typography: { fontFamily: "var(--font-inter)" },
+  cssVariables: { colorSchemeSelector: "data-toolpad-color-scheme" },
+  colorSchemes: { light: lightTheme, dark: darkTheme },
 });

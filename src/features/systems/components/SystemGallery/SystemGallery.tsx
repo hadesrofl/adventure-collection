@@ -19,9 +19,8 @@ export default async function SystemGallery({
 }: SystemGalleryProps) {
   return (
     <Stack {...props} spacing={2}>
-      <Typography variant="h4">{dictionary.SystemGallery.title}</Typography>
       <Grid container marginBottom={2}>
-        <Grid item xs={5}>
+        <Grid item xs={4}>
           <Typography variant="h5">
             {dictionary.SystemGallery.headers.system}
           </Typography>
@@ -31,7 +30,7 @@ export default async function SystemGallery({
             {dictionary.SystemGallery.headers.adventureCount}
           </Typography>
         </Grid>
-        <Grid item xs={3} textAlign="end">
+        <Grid item xs={4} textAlign="end">
           <Typography variant="h5">
             {dictionary.SystemGallery.headers.actions}
           </Typography>
@@ -47,7 +46,7 @@ export default async function SystemGallery({
               key={crypto.randomUUID()}
               data-testid={TestIds.systemGallery.entry(entry.name)}
             >
-              <Grid item xs={5}>
+              <Grid item xs={4}>
                 <Typography>{entry.name}</Typography>
               </Grid>
               <Grid item xs={4} textAlign="center">
@@ -57,7 +56,7 @@ export default async function SystemGallery({
                   {entry.adventures.length}
                 </Typography>
               </Grid>
-              <Grid item xs={3} display="flex" justifyContent="end">
+              <Grid item xs={4} display="flex" justifyContent="end">
                 <SystemButtonGroup system={entry} />
               </Grid>
             </Grid>

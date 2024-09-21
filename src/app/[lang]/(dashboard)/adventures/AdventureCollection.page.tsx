@@ -11,7 +11,9 @@ export class AdventureCollectionPageObject {
   noAdventureDialog!: NoAdventureDialogPage;
 
   async init() {
-    this.pageElement = await AdventureCollectionPage();
+    this.pageElement = await AdventureCollectionPage({
+      params: { lang: "de" },
+    });
     this.gallery = new AdventureGalleryPageObject({ adventures: [] });
     this.noAdventureDialog = new NoAdventureDialogPage();
   }

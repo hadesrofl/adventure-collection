@@ -1,4 +1,16 @@
 {
+  "Navigation": {
+    "adventures": "Abenteuer",
+    "series": "Abenteuerreihen",
+    "systems": "Regelwerke"
+  },
+  "PageTitles": {
+    "CreateAdventure": "Abenteuer erstellen",
+    "EditAdventure": "Bearbeiten",
+    "AdventureGallery": "Abenteuer Galerie",
+    "SystemGallery": "Regelwerke",
+    "SeriesGallery": "Abenteuerreihen"
+  },
   "AdventureForm": {
     "labels": {
       "title": "Titel",
@@ -156,6 +168,7 @@
     "English": "Englisch"
   },
   "Models": {
+    "adventure": "Abenteuer",
     "adventures": {
       "name": "Titel",
       "summary": "Zusammenfassung",

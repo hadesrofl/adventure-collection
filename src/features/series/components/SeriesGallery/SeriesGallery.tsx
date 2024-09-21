@@ -25,14 +25,13 @@ export default async function SeriesGallery({
 
   return (
     <Stack {...props} spacing={2}>
-      <Typography variant="h4">{dictionary.SeriesGallery.title}</Typography>
       <Grid container marginBottom={2}>
-        <Grid item xs={5}>
+        <Grid item xs={4}>
           <Typography variant="h5">
             {dictionary.SeriesGallery.headers.system}
           </Typography>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={5}>
           <Typography variant="h5">
             {dictionary.SeriesGallery.headers.series}
           </Typography>
@@ -53,10 +52,10 @@ export default async function SeriesGallery({
               key={crypto.randomUUID()}
               data-testid={TestIds.seriesGallery.entry(entry.name)}
             >
-              <Grid item xs={5}>
+              <Grid item xs={4}>
                 <Typography>{entry.system.name}</Typography>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs={4}>
                 <Badge
                   data-testid={TestIds.seriesGallery.badge(entry.name)}
                   badgeContent={count}
@@ -66,7 +65,7 @@ export default async function SeriesGallery({
                   <Chip label={entry.name} />
                 </Badge>
               </Grid>
-              <Grid item xs={1} className={iconColumnClasses}>
+              <Grid item xs={4} className={iconColumnClasses}>
                 <SeriesButtonGroup series={entry} />
               </Grid>
             </Grid>
