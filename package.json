@@ -27,7 +27,7 @@
     "@toolpad/core": "^0.7.0",
     "joi": "^17.13.3",
     "negotiator": "^0.6.3",
-    "next": "14.2.13",
+    "next": "14.2.20",
     "prisma": "^5.19.1",
     "react": "^18",
     "react-dom": "^18",
